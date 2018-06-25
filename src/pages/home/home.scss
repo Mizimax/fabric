@@ -1,3 +1,49 @@
 page-home {
-
+  .home-bg {
+    background: url(../../assets/imgs/bg.home.png);
+    background-position: top center;
+    background-size: 100% 100%;
+  }
+  .logo {
+    width: 160px;
+    max-width: 50%;
+    margin-top: 40px;
+  }
+  .logo.hide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    width: 100px;
+    height: 100px;
+  }
+  .message {
+    margin-top: 10px;
+  }
+  .message h1 {
+    font-size: 40px;
+  }
+  .message span {
+    font-size: 16px;
+  }
+  .btn-gallery {
+    border-radius: 20px;
+    width: 240px;
+    padding: 10px 0;
+    color: white;
+    font-size: 20px;
+    border: 1px solid #fff;
+    transition: all 0.1s;
+  }
+  .btn-gallery:active {
+    background-color: white;
+    color: black;
+  }
+  .btn-margin {
+    margin-top: 30px;
+  }
+  .qr {
+    margin-top: 40px;
+  }
 }
