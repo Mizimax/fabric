@@ -1,5 +1,6 @@
 <ion-content class="home-bg" padding>
   <!-- <div class="absolute middle"> -->
+
   <div align="center">
     <div class="logo">
       <img [src]="logo">
@@ -8,11 +9,13 @@
       <h1>{{ welcome }}</h1>
       <span>{{ desc }}</span>
     </div>
-    <div class="btn-gallery btn-margin" (click)="goToType()">
-      <img src="../../assets/imgs/icon.home.png" width="15"> Visit Gallery
+    <div class="btn-gallery btn-margin" (click)="goToType()" [ngClass]="{'active': visit}">
+      <span *ngIf="!visit">
+        <img src="../../assets/imgs/icon.home.png" width="15"> Visit Gallery</span>
+      <ion-spinner *ngIf="visit" name="crescent"></ion-spinner>
     </div>
-    <div class="qr" (click)="goToQr()">
-      <img src="../../assets/imgs/qr.home.png" width="120">
+    <div class="qr">
+      <img src="../../assets/imgs/qr.home.png" width="120" (click)="goToQr()">
     </div>
   </div>
   <!-- </div> -->

@@ -1,3 +1,41 @@
 page-type {
-
+  .section {
+    height: 50%;
+    position: relative;
+    background-position: top center;
+    background-size: 100% 100%;
+  }
+  .my {
+    position: absolute;
+    bottom: 45px;
+    right: 40px;
+    height: 70px;
+    width: 240px;
+    border-radius: 40px;
+  }
+  .my.silk {
+    background-color: #f9d85a;
+    color: black;
+    bottom: calc(1em + 100px);
+  }
+  .my.cotton {
+    color: white;
+    background-color: #e8766c;
+  }
+  .my .text {
+    padding: 15px 20px;
+    font-size: 9px;
+  }
+  .img {
+    position: absolute;
+    right: -20px;
+    top: -30px;
+    // border-radius: 50%;
+  }
+  // .cotton .img {
+  //   border: 1px solid #e8766c;
+  // }
+  // .silk .img {
+  //   border: 1px solid #f9d85a;
+  // }
 }

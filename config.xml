@@ -3,7 +3,7 @@
     <name>fabric-otop</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.1.42:8100" />
+    <content original-src="index.html" src="http://192.168.1.38:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -19,6 +19,7 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="AutoHideSplashScreen" value="false" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -83,9 +84,12 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="2.0.5" />
     <allow-navigation href="http://192.168.1.41:8100" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
-    <plugin name="cordova-plugin-qrscanner" spec="^2.6.0" />
     <allow-navigation href="http://192.168.1.44:8100" />
     <plugin name="cordova-plugin-advanced-http" spec="^1.11.1" />
     <allow-navigation href="http://192.168.1.42:8100" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.0">
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
+    </plugin>
+    <allow-navigation href="http://192.168.1.38:8100" />
     <engine name="android" spec="7.0.0" />
 </widget>
