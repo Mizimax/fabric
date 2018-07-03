@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
+import { HomeService } from "../../services/home.service";
 
 /**
  * Generated class for the ProductPage page.
@@ -15,14 +16,21 @@ import { StatusBar } from "@ionic-native/status-bar";
   templateUrl: "product.html"
 })
 export class ProductPage {
+  public products;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public statusBar: StatusBar
+    public statusBar: StatusBar,
+    private home: HomeService
   ) {}
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ProductPage");
+    this.home.setProduct(res => {
+      console.log(res);
+      this.products = res.data;
+    });
   }
 
   ionViewDidEnter() {

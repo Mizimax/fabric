@@ -1,0 +1,59 @@
+ProductList {
+  .home .name {
+    font-size: 21px;
+    font-weight: bold;
+  }
+  .home .province {
+    display: inline-block;
+    margin-left: 3px;
+    font-size: 11px;
+    font-weight: 100;
+    border-radius: 3px;
+    padding: 2px 8px;
+    -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3.5px);
+  }
+  .list {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .list .name {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    color: white;
+  }
+  .product {
+    height: 200px;
+    margin-left: 15px;
+    flex: 0 0 140px;
+    position: relative;
+    background: black;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.15);
+  }
+  .product-space {
+    padding-right: 15px;
+  }
+  .product_name {
+    font-size: 16px;
+  }
+  .limit {
+    font-size: 10px;
+    padding: 3px 5px 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+    color: rgb(20, 20, 99);
+    background: white;
+  }
+  .padding-left {
+    padding-left: 15px;
+  }
+  .list-margin-top {
+    margin-top: 12px;
+  }
+}

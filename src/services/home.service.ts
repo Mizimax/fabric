@@ -6,6 +6,7 @@ import { BehaviorSubject } from "rxjs/BehaviorSubject";
 export class HomeService {
   public home = new BehaviorSubject<object>({});
   public type = new BehaviorSubject<object>({});
+  public product = new BehaviorSubject<object>({});
 
   constructor(private http: HTTP) {}
   public async setHome(callback) {
@@ -51,6 +52,24 @@ export class HomeService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  public async setProduct(callback) {
+    try {
+      let { data } = await this.http.get(
+        "https://fabricotop.herokuapp.com/api/v1/products",
+        {},
+        {}
+      );
+      let ress = JSON.parse(data);
+      callback(ress);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  public getProduct() {
+    return this.product.getValue();
   }
 
   public getType() {
