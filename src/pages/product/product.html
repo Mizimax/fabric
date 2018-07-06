@@ -5,10 +5,10 @@
   Ionic pages and navigation.
 -->
 
-<ion-content>
+<ion-content class="paddingMenu" (ionScroll)="onScroll($event)">
   <div class="collection">
     <div class="box">
-      <div class="name">C o t t o n</div>
+      <div class="name">{{ product_type }}</div>
       <div class="collect">C o l l e c t i o n</div>
     </div>
   </div>

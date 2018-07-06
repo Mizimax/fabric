@@ -6,7 +6,8 @@ import { BehaviorSubject } from "rxjs/BehaviorSubject";
 export class HomeService {
   public home = new BehaviorSubject<object>({});
   public type = new BehaviorSubject<object>({});
-  public product = new BehaviorSubject<object>({});
+  public product = {};
+  public product_detail = {};
 
   constructor(private http: HTTP) {}
   public async setHome(callback) {
@@ -54,22 +55,49 @@ export class HomeService {
     }
   }
 
-  public async setProduct(callback) {
+  public async setProduct(type, callback) {
+    if (!this.isEmpty(this.product[type])) return callback(this.product[type]);
     try {
       let { data } = await this.http.get(
-        "https://fabricotop.herokuapp.com/api/v1/products",
+        "https://fabricotop.herokuapp.com/api/v1/products/" + type,
         {},
         {}
       );
       let ress = JSON.parse(data);
+      this.product = { ...this.product, [type]: ress };
       callback(ress);
     } catch (error) {
       console.log(error);
     }
   }
 
+  public async setProductDetail(product_id, callback) {
+    if (!this.isEmpty(this.product_detail[product_id]))
+      return callback(this.product_detail[product_id]);
+    try {
+      let { data } = await this.http.get(
+        "https://fabricotop.herokuapp.com/api/v1/product/" + product_id,
+        {},
+        {}
+      );
+      let ress = JSON.parse(data);
+      this.product_detail = { ...this.product_detail, [product_id]: ress };
+      callback(ress);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  private isEmpty(obj) {
+    for (var prop in obj) {
+      if (obj.hasOwnProperty(prop)) return false;
+    }
+
+    return true;
+  }
+
   public getProduct() {
-    return this.product.getValue();
+    return this.product;
   }
 
   public getType() {

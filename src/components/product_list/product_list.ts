@@ -20,4 +20,12 @@ export class ProductListComponent {
       return key;
     }
   }
+
+  goHouse(house_id) {
+    this.navCtrl.push("ProductDetailPage", { house_id: house_id });
+  }
+
+  goProduct(product_id) {
+    this.navCtrl.push("ProductDetailPage", { product_id: product_id });
+  }
 }

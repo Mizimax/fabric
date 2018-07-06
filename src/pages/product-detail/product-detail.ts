@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild, ElementRef } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { HomeService } from "../../services/home.service";
 
 /**
- * Generated class for the ProductPage page.
+ * Generated class for the ProductDetailPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,14 +12,15 @@ import { HomeService } from "../../services/home.service";
 
 @IonicPage()
 @Component({
-  selector: "page-product",
-  templateUrl: "product.html"
+  selector: "page-product-detail",
+  templateUrl: "product-detail.html"
 })
-export class ProductPage {
-  public products;
-  public product_type;
-
+export class ProductDetailPage {
+  private product_id: number;
   private firstStatusBar = false;
+  public product;
+  @ViewChild("images") images: ElementRef;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -28,12 +29,18 @@ export class ProductPage {
   ) {}
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad ProductPage");
+    console.log("ionViewDidLoad ProductDetailPage");
+    this.product_id = this.navParams.get("product_id");
+    this.home.setProductDetail(this.product_id, res => {
+      this.product = res.data;
 
-    let type = this.navParams.get("type");
-    this.product_type = type === "cotton" ? "C O T T O N" : "S I L K";
-    this.home.setProduct(type, res => {
-      this.products = res.data;
+      setTimeout(() => {
+        let position =
+          (this.images.nativeElement.scrollWidth -
+            this.images.nativeElement.offsetWidth) /
+          2;
+        this.images.nativeElement.scrollLeft = position;
+      }, 0);
     });
   }
 
@@ -42,8 +49,14 @@ export class ProductPage {
     this.statusBar.styleDefault();
   }
 
+  firstImage() {
+    for (var key in this.product.image_url) {
+      return key;
+    }
+  }
+
   onScroll(e) {
-    if (e.scrollTop > 38) {
+    if (e.scrollTop > 30) {
       this.statusBar.backgroundColorByHexString("4bb29d");
       this.statusBar.styleLightContent();
       this.firstStatusBar = true;

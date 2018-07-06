@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ProductDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content (ionScroll)="onScroll($event)" padding>
+  <div class="container">
+    <div class="product" *ngIf="product">
+      <div class="product_name">
+        <span class="header">{{ product.product_name }}</span>
+        <div class="badge">{{ product.house_name }}</div>
+        <div class="badge">{{ product.house_province }}</div>
+      </div>
+      <div class="images">
+        <img class="img-header" [src]="product.image_url[firstImage()]">
+        <div class="image" #images>
+          <img *ngFor="let image of product.image_url" [src]="image">
+          <img *ngFor="let image of product.image_url" [src]="image">
+          <img *ngFor="let image of product.image_url" [src]="image">
+          <img *ngFor="let image of product.image_url" [src]="image">
+          <img *ngFor="let image of product.image_url" [src]="image">
+        </div>
+      </div>
+      <div class="hr"></div>
+      <div class="tags">
+        <span class="tag" *ngFor="let tag of product.tag_name | keys" [style.backgroundColor]="'#' + tag.value.tag_color">
+          <img [src]="'../../assets/imgs/icon/' + tag.value.tag_icon" width="10"> {{ tag.value.tag_name }}
+        </span>
+      </div>
+      <div class="product_detail">
+        <h3>Fabric Detail</h3>
+        <div class="detail">
+          {{ product.product_detail }}
+        </div>
+        <h3>Color ID#</h3>
+        <div class="color" [style.backgroundColor]="'#'+product.product_color"></div>
+        <span class="color_id">Color ID : </span>{{ product.product_color }}
+      </div>
+    </div>
+  </div>
+  <menu></menu>
+</ion-content>

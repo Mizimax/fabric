@@ -11,10 +11,16 @@ import { HomePage } from "../pages/home/home";
 
 import { HomeService } from "../services/home.service";
 import { QrService } from "../services/qr.service";
+import { NativePageTransitions } from "@ionic-native/native-page-transitions";
 
 @NgModule({
   declarations: [MyApp, HomePage],
-  imports: [BrowserModule, IonicModule.forRoot(MyApp)],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp, {
+      pageTransition: "ios-transition"
+    })
+  ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage],
   providers: [
@@ -24,6 +30,7 @@ import { QrService } from "../services/qr.service";
     HomeService,
     QrService,
     BarcodeScanner,
+    NativePageTransitions,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

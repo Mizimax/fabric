@@ -16,7 +16,7 @@ page-product {
       transform: translateX(-50%);
       .name {
         margin-top: 6px;
-        font-size: 23px;
+        font-size: 20px;
         font-weight: 500;
       }
       .collect {
@@ -28,5 +28,8 @@ page-product {
   }
   .container.product {
     padding-top: 28px;
+  }
+  .paddingMenu {
+    padding-bottom: 50px;
   }
 }

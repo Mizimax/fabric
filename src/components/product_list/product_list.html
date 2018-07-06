@@ -1,11 +1,11 @@
 <!-- Generated template for the MenuComponent component -->
 <div class="list-margin-top">
-  <div class="home padding-left">
+  <div class="home padding-left" (click)="goHouse(firstKey())">
     <span class="name">{{ products[firstKey()].house_name }}</span>
     <span class="province">{{ products[firstKey()].house_province }}</span>
   </div>
   <div class="list">
-    <div *ngFor="let product of products | keys" class="product" [style.backgroundImage]="'url(' + product.value.image_url[0] + ')'">
+    <div *ngFor="let product of products | keys" (click)="goProduct(product.key)" class="product" [style.backgroundImage]="'url(' + product.value.image_url[0] + ')'">
       <div class="name">
         <div *ngIf="product.value.product_limited === 1 ? true: false" class="limit">LIMITED PRODUCT</div>
         <div class="product_name">{{ product.value.product_name }}</div>

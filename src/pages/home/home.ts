@@ -4,6 +4,10 @@ import { StatusBar } from "@ionic-native/status-bar";
 
 import { HomeService } from "../../services/home.service";
 import { QrService } from "../../services/qr.service";
+import {
+  NativePageTransitions,
+  NativeTransitionOptions
+} from "@ionic-native/native-page-transitions";
 
 @Component({
   selector: "page-home",
@@ -19,7 +23,8 @@ export class HomePage {
     public navCtrl: NavController,
     public statusBar: StatusBar,
     private home: HomeService,
-    private qr: QrService
+    private qr: QrService,
+    private trans: NativePageTransitions
   ) {}
 
   ionViewDidLoad() {
@@ -39,6 +44,11 @@ export class HomePage {
     this.visit = true;
     this.home.setType(() => {
       this.visit = false;
+      // let options: NativeTransitionOptions = {
+      //   direction: "left",
+      //   duration: 300
+      // };
+      // this.trans.slide(options);
       this.navCtrl.push("TypePage");
     });
   }
@@ -51,4 +61,12 @@ export class HomePage {
       })
       .catch(err => console.log(err));
   }
+
+  // ionViewWillLeave() {
+  //   let options: NativeTransitionOptions = {
+  //     direction: "right",
+  //     duration: 300
+  //   };
+  //   this.trans.slide(options);
+  // }
 }

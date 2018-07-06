@@ -2,6 +2,10 @@ import { Component } from "@angular/core";
 import { StatusBar } from "@ionic-native/status-bar";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { HomeService } from "../../services/home.service";
+import {
+  NativePageTransitions,
+  NativeTransitionOptions
+} from "@ionic-native/native-page-transitions";
 
 /**
  * Generated class for the TypePage page.
@@ -24,7 +28,8 @@ export class TypePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public statusBar: StatusBar,
-    private home: HomeService
+    private home: HomeService,
+    private trans: NativePageTransitions
   ) {}
 
   ionViewDidLoad() {
@@ -36,6 +41,7 @@ export class TypePage {
   }
 
   ionViewDidEnter() {
+    this.statusBar.overlaysWebView(true);
     this.statusBar.styleLightContent();
   }
 
@@ -50,4 +56,21 @@ export class TypePage {
       type: "silk"
     });
   }
+
+  // ionViewWillEnter() {
+  //   let options: NativeTransitionOptions = {
+  //     direction: "left",
+  //     duration: 200
+  //   };
+  //   this.trans.slide(options);
+  // }
+
+  // ionViewWillLeave() {
+  //   let options = {
+  //     duration: 500,
+  //     androiddelay: 0,
+  //     iosdelay: 0
+  //   };
+  //   this.trans.fade(options);
+  // }
 }
