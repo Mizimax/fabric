@@ -20,6 +20,10 @@ page-product-detail {
     font-size: 28px;
     font-weight: bold;
   }
+  .images {
+    position: relative;
+    padding-top: 198px;
+  }
   .image {
     display: flex;
     overflow-x: auto;
@@ -36,6 +40,11 @@ page-product-detail {
   .img-header {
     height: 200px;
     width: 100%;
+    -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    z-index: 99;
   }
   .product_detail {
     padding: 20px 35px;
@@ -47,9 +56,10 @@ page-product-detail {
   .tags {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
   .tag {
-    padding: 5px 18px;
+    padding: 5px 10px;
     border-radius: 3px;
     color: white;
     font-size: 12px;
@@ -58,7 +68,8 @@ page-product-detail {
     box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
   }
   .tag img {
-    margin-right: 10px;
+    margin-right: 3px;
+    transform: translateY(1px);
   }
   .tag:not(:first-child) {
     transform: translateX(-3px);
@@ -73,5 +84,11 @@ page-product-detail {
     width: 80%;
     margin: 15px auto;
     border-bottom: 1px solid #ddd;
+  }
+  ion-spinner {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
   }
 }

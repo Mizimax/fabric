@@ -8,6 +8,7 @@ export class HomeService {
   public type = new BehaviorSubject<object>({});
   public product = {};
   public product_detail = {};
+  public house_detail = {};
 
   constructor(private http: HTTP) {}
   public async setHome(callback) {
@@ -82,6 +83,23 @@ export class HomeService {
       );
       let ress = JSON.parse(data);
       this.product_detail = { ...this.product_detail, [product_id]: ress };
+      callback(ress);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  public async setHouseDetail(house_id, callback) {
+    if (!this.isEmpty(this.house_detail[house_id]))
+      return callback(this.house_detail[house_id]);
+    try {
+      let { data } = await this.http.get(
+        "https://fabricotop.herokuapp.com/api/v1/house/" + house_id,
+        {},
+        {}
+      );
+      let ress = JSON.parse(data);
+      this.product_detail = { ...this.product_detail, [house_id]: ress };
       callback(ress);
     } catch (error) {
       console.log(error);

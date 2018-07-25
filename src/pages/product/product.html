@@ -15,5 +15,6 @@
   <div class="container product">
     <ProductList *ngFor="let item of products | keys" [product]="item.value"></ProductList>
   </div>
+  <ion-spinner *ngIf="!products" name="crescent"></ion-spinner>
   <menu></menu>
 </ion-content>

@@ -1,0 +1,66 @@
+<!--
+  Generated template for the HouseDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content (ionScroll)="onScroll($event)">
+  <section id="dg-container" class="dg-container">
+    <div class="dg-wrapper">
+      <a href="">
+        <img src="../../assets/imgs/cotton.type.png" width="50">
+      </a>
+      <a href="">
+        <img src="../../assets/imgs/cotton.type.png" width="50">
+      </a>
+      <a href="">
+        <img src="../../assets/imgs/cotton.type.png" width="50">
+      </a>
+
+    </div>
+    <nav>
+      <span class="dg-prev">
+        <</span>
+          <span class="dg-next">></span>
+    </nav>
+  </section>
+  <div class="container">
+    <ion-spinner *ngIf="!house" name="crescent"></ion-spinner>
+    <div class="house" *ngIf="house">
+      <div class="cover">
+        <div class="bg" [style.backgroundImage]="'url('+ house.house_image +')'"></div>
+
+        <div class="house_name" align="center">
+          {{ house.house_name }}
+        </div>
+        <div class="province" align="center">
+          <div class="badge">{{ house.house_province }}</div>
+        </div>
+        <div class="house_image" [style.backgroundImage]="'url('+ house.house_image +')'"></div>
+        <div class="contact">
+          <div class="map child">
+            <div>
+              <img src="../../assets/imgs/map.png" width="15">
+            </div>
+            <div>{{ house.house_province }}
+              <br>{{ house.house_name }}</div>
+          </div>
+          <div class="tel child">
+            <div>
+              <img src="../../assets/imgs/tel.png" width="18">
+            </div>
+            <div>{{ house.house_phone }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="content" align="center">
+        <h4>{{ house.house_name }} Collection</h4>
+        <div class="collection">
+
+        </div>
+        <div class="house_detail">{{ house.house_detail }}</div>
+      </div>
+    </div>
+  </div>
+  <menu></menu>
+</ion-content>

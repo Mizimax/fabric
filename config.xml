@@ -3,7 +3,7 @@
     <name>fabric-otop</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.1.39:8100" />
+    <content original-src="index.html" src="http://192.168.137.9:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -94,5 +94,9 @@
     <allow-navigation href="http://192.168.1.38:8100" />
     <allow-navigation href="http://192.168.1.39:8100" />
     <allow-navigation href="http://192.168.1.35:8100" />
+    <allow-navigation href="http://192.168.1.40:8100" />
+    <allow-navigation href="http://192.168.137.1:8100" />
+    <allow-navigation href="http://10.5.50.25:8100" />
+    <allow-navigation href="http://192.168.137.9:8100" />
     <engine name="android" spec="7.0.0" />
 </widget>

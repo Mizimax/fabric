@@ -21,7 +21,7 @@ export class MenuComponent {
   }
 
   goHome() {
-    this.navCtrl.popTo("TypePage", { animation: "ios-transition" });
+    this.navCtrl.popTo(this.navCtrl.getByIndex(1));
   }
 
   goQr() {

@@ -6,27 +6,26 @@
 -->
 
 <ion-content (ionScroll)="onScroll($event)" padding>
+  <ion-spinner *ngIf="!product" name="crescent"></ion-spinner>
   <div class="container">
     <div class="product" *ngIf="product">
       <div class="product_name">
         <span class="header">{{ product.product_name }}</span>
-        <div class="badge">{{ product.house_name }}</div>
+        <div class="badge" (click)="goHouse(product.house_id)">{{ product.house_name }}</div>
         <div class="badge">{{ product.house_province }}</div>
       </div>
       <div class="images">
         <img class="img-header" [src]="product.image_url[firstImage()]">
         <div class="image" #images>
-          <img *ngFor="let image of product.image_url" [src]="image">
-          <img *ngFor="let image of product.image_url" [src]="image">
-          <img *ngFor="let image of product.image_url" [src]="image">
-          <img *ngFor="let image of product.image_url" [src]="image">
-          <img *ngFor="let image of product.image_url" [src]="image">
+          <div *ngFor="let image of product.image_url; let i = index">
+            <img *ngIf="i != 0" [src]="image">
+          </div>
         </div>
       </div>
       <div class="hr"></div>
       <div class="tags">
         <span class="tag" *ngFor="let tag of product.tag_name | keys" [style.backgroundColor]="'#' + tag.value.tag_color">
-          <img [src]="'../../assets/imgs/icon/' + tag.value.tag_icon" width="10"> {{ tag.value.tag_name }}
+          <img [src]="tag.value.tag_icon" height="10"> {{ tag.value.tag_name }}
         </span>
       </div>
       <div class="product_detail">

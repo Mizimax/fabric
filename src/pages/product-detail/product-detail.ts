@@ -55,6 +55,10 @@ export class ProductDetailPage {
     }
   }
 
+  goHouse(house_id) {
+    this.navCtrl.push("HouseDetailPage", { house_id: house_id });
+  }
+
   onScroll(e) {
     if (e.scrollTop > 30) {
       this.statusBar.backgroundColorByHexString("4bb29d");

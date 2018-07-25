@@ -32,4 +32,10 @@ page-product {
   .paddingMenu {
     padding-bottom: 50px;
   }
+  ion-spinner {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+  }
 }
