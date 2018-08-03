@@ -22,6 +22,7 @@ export class HomeService {
       let objData = {};
       ress.data.forEach(res => {
         if (res.name === "HOME_IMAGE") objData["logo"] = res.data;
+        else if (res.name === "HOME_BG_IMAGE") objData["bg"] = res.data;
         else if (res.name === "HOME_WELCOME") objData["welcome"] = res.data;
         else if (res.name === "HOME_TEXT") objData["desc"] = res.data;
       });

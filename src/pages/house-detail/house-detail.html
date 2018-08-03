@@ -5,25 +5,20 @@
   Ionic pages and navigation.
 -->
 <ion-content (ionScroll)="onScroll($event)">
-  <section id="dg-container" class="dg-container">
-    <div class="dg-wrapper">
-      <a href="">
-        <img src="../../assets/imgs/cotton.type.png" width="50">
-      </a>
-      <a href="">
-        <img src="../../assets/imgs/cotton.type.png" width="50">
-      </a>
-      <a href="">
-        <img src="../../assets/imgs/cotton.type.png" width="50">
-      </a>
+  <div class="container">
+    <ion-slides class="items">
+      <ion-slide>
+        <div class="eiei"></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="eiei"></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="eiei"></div>
+      </ion-slide>
+    </ion-slides>
 
-    </div>
-    <nav>
-      <span class="dg-prev">
-        <</span>
-          <span class="dg-next">></span>
-    </nav>
-  </section>
+  </div>
   <div class="container">
     <ion-spinner *ngIf="!house" name="crescent"></ion-spinner>
     <div class="house" *ngIf="house">
@@ -40,14 +35,14 @@
         <div class="contact">
           <div class="map child">
             <div>
-              <img src="../../assets/imgs/map.png" width="15">
+              <img src="assets/imgs/map.png" width="15">
             </div>
             <div>{{ house.house_province }}
               <br>{{ house.house_name }}</div>
           </div>
           <div class="tel child">
             <div>
-              <img src="../../assets/imgs/tel.png" width="18">
+              <img src="assets/imgs/tel.png" width="18">
             </div>
             <div>{{ house.house_phone }}</div>
           </div>

@@ -87,24 +87,24 @@
       if (this.support3d && this.supportTrans) {
         leftCSS = {
           "-webkit-transform":
-            "translateX(-350px) translateZ(-200px) rotateY(0deg)",
+            "translateX(-150px) translateZ(-200px) rotateY(0deg)",
           "-moz-transform":
-            "translateX(-350px) translateZ(-200px) rotateY(0deg)",
-          "-o-transform": "translateX(-350px) translateZ(-200px) rotateY(0deg)",
+            "translateX(-150px) translateZ(-200px) rotateY(0deg)",
+          "-o-transform": "translateX(-150px) translateZ(-200px) rotateY(0deg)",
           "-ms-transform":
-            "translateX(-350px) translateZ(-200px) rotateY(0deg)",
-          transform: "translateX(-350px) translateZ(-200px) rotateY(0deg)"
+            "translateX(-150px) translateZ(-200px) rotateY(0deg)",
+          transform: "translateX(-150px) translateZ(-200px) rotateY(0deg)"
         };
 
         rightCSS = {
           "-webkit-transform":
-            "translateX(350px) translateZ(-200px) rotateY(-0deg)",
+            "translateX(150px) translateZ(-200px) rotateY(-0deg)",
           "-moz-transform":
-            "translateX(350px) translateZ(-200px) rotateY(-0deg)",
-          "-o-transform": "translateX(350px) translateZ(-200px) rotateY(-0deg)",
+            "translateX(150px) translateZ(-200px) rotateY(-0deg)",
+          "-o-transform": "translateX(150px) translateZ(-200px) rotateY(-0deg)",
           "-ms-transform":
-            "translateX(350px) translateZ(-200px) rotateY(-0deg)",
-          transform: "translateX(350px) translateZ(-200px) rotateY(-0deg)"
+            "translateX(150px) translateZ(-200px) rotateY(-0deg)",
+          transform: "translateX(150px) translateZ(-200px) rotateY(-0deg)"
         };
 
         leftCSS.opacity = 1;
@@ -113,19 +113,19 @@
         rightCSS.visibility = "visible";
       } else if (this.support2d && this.supportTrans) {
         leftCSS = {
-          "-webkit-transform": "translate(-350px) scale(0.8)",
-          "-moz-transform": "translate(-350px) scale(0.8)",
-          "-o-transform": "translate(-350px) scale(0.8)",
-          "-ms-transform": "translate(-350px) scale(0.8)",
-          transform: "translate(-350px) scale(0.8)"
+          "-webkit-transform": "translate(-150px) scale(0.8)",
+          "-moz-transform": "translate(-150px) scale(0.8)",
+          "-o-transform": "translate(-150px) scale(0.8)",
+          "-ms-transform": "translate(-150px) scale(0.8)",
+          transform: "translate(-150px) scale(0.8)"
         };
 
         rightCSS = {
-          "-webkit-transform": "translate(350px) scale(0.8)",
-          "-moz-transform": "translate(350px) scale(0.8)",
-          "-o-transform": "translate(350px) scale(0.8)",
-          "-ms-transform": "translate(350px) scale(0.8)",
-          transform: "translate(350px) scale(0.8)"
+          "-webkit-transform": "translate(150px) scale(0.8)",
+          "-moz-transform": "translate(150px) scale(0.8)",
+          "-o-transform": "translate(150px) scale(0.8)",
+          "-ms-transform": "translate(150px) scale(0.8)",
+          transform: "translate(150px) scale(0.8)"
         };
 
         currentCSS = {
@@ -252,14 +252,14 @@
           case "left":
             return {
               "-webkit-transform":
-                "translateX(-350px) translateZ(-200px) rotateY(0deg)",
+                "translateX(-150px) translateZ(-200px) rotateY(0deg)",
               "-moz-transform":
-                "translateX(-350px) translateZ(-200px) rotateY(0deg)",
+                "translateX(-150px) translateZ(-200px) rotateY(0deg)",
               "-o-transform":
-                "translateX(-350px) translateZ(-200px) rotateY(0deg)",
+                "translateX(-150px) translateZ(-200px) rotateY(0deg)",
               "-ms-transform":
-                "translateX(-350px) translateZ(-200px) rotateY(0deg)",
-              transform: "translateX(-350px) translateZ(-200px) rotateY(0deg)",
+                "translateX(-150px) translateZ(-200px) rotateY(0deg)",
+              transform: "translateX(-150px) translateZ(-200px) rotateY(0deg)",
               opacity: 1,
               visibility: "visible"
             };
@@ -267,14 +267,14 @@
           case "right":
             return {
               "-webkit-transform":
-                "translateX(350px) translateZ(-200px) rotateY(-0deg)",
+                "translateX(150px) translateZ(-200px) rotateY(-0deg)",
               "-moz-transform":
-                "translateX(350px) translateZ(-200px) rotateY(-0deg)",
+                "translateX(150px) translateZ(-200px) rotateY(-0deg)",
               "-o-transform":
-                "translateX(350px) translateZ(-200px) rotateY(-0deg)",
+                "translateX(150px) translateZ(-200px) rotateY(-0deg)",
               "-ms-transform":
-                "translateX(350px) translateZ(-200px) rotateY(-0deg)",
-              transform: "translateX(350px) translateZ(-200px) rotateY(-0deg)",
+                "translateX(150px) translateZ(-200px) rotateY(-0deg)",
+              transform: "translateX(150px) translateZ(-200px) rotateY(-0deg)",
               opacity: 1,
               visibility: "visible"
             };
@@ -318,22 +318,22 @@
             break;
           case "left":
             return {
-              "-webkit-transform": "translate(-350px) scale(0.8)",
-              "-moz-transform": "translate(-350px) scale(0.8)",
-              "-o-transform": "translate(-350px) scale(0.8)",
-              "-ms-transform": "translate(-350px) scale(0.8)",
-              transform: "translate(-350px) scale(0.8)",
+              "-webkit-transform": "translate(-150px) scale(0.8)",
+              "-moz-transform": "translate(-150px) scale(0.8)",
+              "-o-transform": "translate(-150px) scale(0.8)",
+              "-ms-transform": "translate(-150px) scale(0.8)",
+              transform: "translate(-150px) scale(0.8)",
               opacity: 1,
               visibility: "visible"
             };
             break;
           case "right":
             return {
-              "-webkit-transform": "translate(350px) scale(0.8)",
-              "-moz-transform": "translate(350px) scale(0.8)",
-              "-o-transform": "translate(350px) scale(0.8)",
-              "-ms-transform": "translate(350px) scale(0.8)",
-              transform: "translate(350px) scale(0.8)",
+              "-webkit-transform": "translate(150px) scale(0.8)",
+              "-moz-transform": "translate(150px) scale(0.8)",
+              "-o-transform": "translate(150px) scale(0.8)",
+              "-ms-transform": "translate(150px) scale(0.8)",
+              transform: "translate(150px) scale(0.8)",
               opacity: 1,
               visibility: "visible"
             };

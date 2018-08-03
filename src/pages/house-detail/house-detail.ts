@@ -34,15 +34,22 @@ export class HouseDetailPage {
       this.house = res.data;
     });
     (<any>$(document)).ready(function() {
-      (<any>$("#dg-container")).gallery({
-        autoplay: true
-      });
+      (<any>$("#dg-container")).gallery();
     });
   }
 
   ionViewDidEnter() {
     this.statusBar.overlaysWebView(true);
     this.statusBar.styleLightContent();
+  }
+
+  objectSize(obj) {
+    var size = 0,
+      key;
+    for (key in obj) {
+      if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
   }
 
   onScroll(e) {

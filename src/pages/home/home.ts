@@ -17,6 +17,7 @@ export class HomePage {
   public logo: string = "";
   public welcome: string = "";
   public desc: string = "";
+  public bg: string = "";
   public visit: boolean = false;
 
   constructor(
@@ -32,6 +33,7 @@ export class HomePage {
       this.logo = data["logo"];
       this.welcome = data["welcome"];
       this.desc = data["desc"];
+      this.bg = data["bg"];
     });
   }
 
