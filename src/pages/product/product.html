@@ -5,14 +5,14 @@
   Ionic pages and navigation.
 -->
 
-<ion-content class="paddingMenu" (ionScroll)="onScroll($event)">
+<ion-content (ionScroll)="onScroll($event)">
   <div class="collection">
     <div class="box">
       <div class="name">{{ product_type }}</div>
       <div class="collect">C o l l e c t i o n</div>
     </div>
   </div>
-  <div class="container product">
+  <div class="container product paddingMenu">
     <ProductList *ngFor="let item of products | keys" [product]="item.value"></ProductList>
   </div>
   <ion-spinner *ngIf="!products" name="crescent"></ion-spinner>
