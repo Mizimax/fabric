@@ -22,7 +22,7 @@ export class ProductListComponent {
   }
 
   goHouse(house_id) {
-    this.navCtrl.push("ProductDetailPage", { house_id: house_id });
+    this.navCtrl.push("HouseDetailPage", { house_id: house_id });
   }
 
   goProduct(product_id) {

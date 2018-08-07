@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 
-<ion-content (ionScroll)="onScroll($event)" padding>
+<ion-content padding>
   <ion-spinner *ngIf="!product" name="crescent"></ion-spinner>
   <div class="container">
     <div class="product" *ngIf="product">
@@ -36,6 +36,7 @@
         <h3>Color ID#</h3>
         <div class="color" [style.backgroundColor]="'#'+product.product_color"></div>
         <span class="color_id">Color ID : </span>{{ product.product_color }}
+
       </div>
     </div>
   </div>

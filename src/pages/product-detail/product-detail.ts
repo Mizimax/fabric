@@ -59,17 +59,17 @@ export class ProductDetailPage {
     this.navCtrl.push("HouseDetailPage", { house_id: house_id });
   }
 
-  onScroll(e) {
-    if (e.scrollTop > 30) {
-      this.statusBar.backgroundColorByHexString("4bb29d");
-      this.statusBar.styleLightContent();
-      this.firstStatusBar = true;
-    } else {
-      this.statusBar.styleDefault();
-      if (this.firstStatusBar) {
-        this.statusBar.overlaysWebView(true);
-        this.firstStatusBar = false;
-      }
-    }
-  }
+  // onScroll(e) {
+  //   if (e.scrollTop > 30) {
+  //     this.statusBar.backgroundColorByHexString("4bb29d");
+  //     this.statusBar.styleLightContent();
+  //     this.firstStatusBar = true;
+  //   } else {
+  //     this.statusBar.styleDefault();
+  //     if (this.firstStatusBar) {
+  //       this.statusBar.overlaysWebView(true);
+  //       this.firstStatusBar = false;
+  //     }
+  //   }
+  // }
 }

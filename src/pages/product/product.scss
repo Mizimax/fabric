@@ -1,9 +1,13 @@
 page-product {
   .collection {
-    margin-top: 60px;
+    margin-top: 50px;
     background: #4bb29d;
     height: 45px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
     .box {
       width: 120px;
       height: 60px;
@@ -27,7 +31,7 @@ page-product {
     }
   }
   .container.product {
-    padding-top: 28px;
+    padding-top: 128px;
   }
   .paddingMenu {
     margin-bottom: 80px;

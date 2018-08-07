@@ -42,17 +42,17 @@ export class ProductPage {
     this.statusBar.styleDefault();
   }
 
-  onScroll(e) {
-    if (e.scrollTop > 38) {
-      this.statusBar.backgroundColorByHexString("4bb29d");
-      this.statusBar.styleLightContent();
-      this.firstStatusBar = true;
-    } else {
-      this.statusBar.styleDefault();
-      if (this.firstStatusBar) {
-        this.statusBar.overlaysWebView(true);
-        this.firstStatusBar = false;
-      }
-    }
-  }
+  // onScroll(e) {
+  //   if (e.scrollTop > 38) {
+  //     this.statusBar.backgroundColorByHexString("4bb29d");
+  //     this.statusBar.styleLightContent();
+  //     this.firstStatusBar = true;
+  //   } else {
+  //     this.statusBar.styleDefault();
+  //     if (this.firstStatusBar) {
+  //       this.statusBar.overlaysWebView(true);
+  //       this.firstStatusBar = false;
+  //     }
+  //   }
+  // }
 }

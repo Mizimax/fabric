@@ -77,12 +77,37 @@ page-house-detail {
     width: unset !important;
   }
   .items {
-    
   }
   .eiei {
     width: 100px;
-    height: 100px;
-    margin: 20px;
-    background: black;
+    height: 130px;
+    margin-left: 130px;
+    margin-right: 130px;
+    border-radius: 5px;
+    position: relative;
+  }
+  .product_name {
+    position: absolute;
+    left: 5px;
+    bottom: 2px;
+    width: 100%;
+    text-align: left;
+    color: white;
+  }
+  .limit {
+    font-size: 9px;
+    padding: 3px 5px 1px 5px;
+    border-radius: 3px;
+    color: rgb(20, 20, 99);
+    background: white;
+  }
+  .collection {
+    margin-top: 15px;
+  }
+  ion-spinner {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
   }
 }

@@ -43,6 +43,10 @@ export class HouseDetailPage {
     this.statusBar.styleLightContent();
   }
 
+  goProduct(product_id) {
+    this.navCtrl.push("ProductDetailPage", { product_id: product_id });
+  }
+
   objectSize(obj) {
     var size = 0,
       key;
