@@ -38,7 +38,7 @@
       <div class="content" align="center">
         <h4>{{ house.house_name }} Collection</h4>
         <div class="collection">
-          <ion-slides [spaceBetween]="-250" slidesPerView="1" [centeredSlides]="true">
+          <ion-slides [spaceBetween]="-250" slidesPerView="1" [centeredSlides]="true" [initialSlide]="objectSize(house.products)/2">
             <ion-slide *ngFor="let product of house.products | keys">
               <div class="eiei" [style.backgroundImage]="'url('+ product.value.image_url[0] +')'" (click)="goProduct(product.value.product_id)">
                 <div class="product_name">

@@ -10,7 +10,7 @@
   <div class="container">
     <div class="product" *ngIf="product">
       <div class="product_name">
-        <span class="header">{{ product.product_name }}</span>
+        <span class="header">{{ product.product_name | uppercase}}</span>
         <div class="badge" (click)="goHouse(product.house_id)">{{ product.house_name }}</div>
         <div class="badge">{{ product.house_province }}</div>
       </div>

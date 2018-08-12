@@ -41,7 +41,8 @@ export class TypePage {
   }
 
   ionViewDidEnter() {
-    this.statusBar.overlaysWebView(true);
+    // this.statusBar.overlaysWebView(true);
+    this.statusBar.styleLightContent();
   }
 
   goCotton() {

@@ -38,7 +38,7 @@ export class ProductPage {
   }
 
   ionViewDidEnter() {
-    this.statusBar.overlaysWebView(true);
+    // this.statusBar.overlaysWebView(true);
     this.statusBar.styleDefault();
   }
 

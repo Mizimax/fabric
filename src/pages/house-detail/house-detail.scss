@@ -1,10 +1,11 @@
 page-house-detail {
   .cover {
-    background: black;
     color: white;
     padding-top: 45px;
     padding-bottom: 20px;
     position: relative;
+    -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
   }
   .cover div {
     transform: translateY(0);
@@ -16,11 +17,11 @@ page-house-detail {
     width: 100%;
     height: 100%;
     background-size: cover;
-    -webkit-filter: blur(7px);
-    -moz-filter: blur(7px);
-    -ms-filter: blur(7px);
-    -o-filter: blur(7px);
-    filter: blur(7px);
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -ms-filter: blur(3px);
+    -o-filter: blur(3px);
+    filter: blur(3px);
   }
   .house_name {
     padding-bottom: 8px;
@@ -41,6 +42,7 @@ page-house-detail {
   }
   .house_detail {
     width: 80%;
+    margin-top: 30px;
     font-size: 13px;
     color: #888;
     text-align: left;

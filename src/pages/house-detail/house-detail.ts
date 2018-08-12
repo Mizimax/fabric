@@ -32,6 +32,7 @@ export class HouseDetailPage {
     this.house_id = this.navParams.get("house_id");
     this.home.setHouseDetail(this.house_id, res => {
       this.house = res.data;
+      console.log(this.house.products);
     });
     (<any>$(document)).ready(function() {
       (<any>$("#dg-container")).gallery();
@@ -39,7 +40,6 @@ export class HouseDetailPage {
   }
 
   ionViewDidEnter() {
-    this.statusBar.overlaysWebView(true);
     this.statusBar.styleLightContent();
   }
 

@@ -44,10 +44,10 @@ export class ProductDetailPage {
     });
   }
 
-  ionViewDidEnter() {
-    this.statusBar.overlaysWebView(true);
-    this.statusBar.styleDefault();
-  }
+  // ionViewDidEnter() {
+  //   this.statusBar.overlaysWebView(true);
+  //   this.statusBar.styleDefault();
+  // }
 
   firstImage() {
     for (var key in this.product.image_url) {
