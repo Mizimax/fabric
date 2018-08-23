@@ -100,7 +100,7 @@ export class HomeService {
         {}
       );
       let ress = JSON.parse(data);
-      this.product_detail = { ...this.product_detail, [house_id]: ress };
+      this.house_detail = { ...this.house_detail, [house_id]: ress };
       callback(ress);
     } catch (error) {
       console.log(error);

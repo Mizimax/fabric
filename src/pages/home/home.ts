@@ -59,7 +59,7 @@ export class HomePage {
     this.qr
       .scan()
       .then(data => {
-        console.log("Barcode data", data);
+        this.navCtrl.push("ProductDetailPage", { product_id: data.text });
       })
       .catch(err => console.log(err));
   }

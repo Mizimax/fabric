@@ -1,0 +1,38 @@
+page-house-gallery {
+  .paddingMenu {
+    margin-bottom: 80px;
+  }
+  .house {
+    padding-top: 30px;
+  }
+  .house_name {
+    padding-bottom: 8px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .badge {
+    display: inline-block;
+    border-radius: 20px;
+    border: 1px solid #888;
+    color: #888;
+    padding: 4px 12px;
+    margin-right: 2px;
+    font-size: 11px;
+    transform: translateY(-5px);
+  }
+  .house_image {
+    background-size: cover;
+    height: 110px;
+    margin-bottom: 5px;
+    flex: 0 0 calc(50% - 2.5px);
+  }
+  .house_image:nth-child(even) {
+    margin-left: 5px;
+  }
+  .video {
+    margin-top: 10px;
+  }
+  video {
+    width: 100%;
+  }
+}

@@ -19,7 +19,8 @@ export class ProductDetailPage {
   private product_id: number;
   private firstStatusBar = false;
   public product;
-  @ViewChild("images") images: ElementRef;
+  @ViewChild("images")
+  images: ElementRef;
 
   constructor(
     public navCtrl: NavController,
@@ -31,9 +32,8 @@ export class ProductDetailPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad ProductDetailPage");
     this.product_id = this.navParams.get("product_id");
-    this.home.setProductDetail(this.product_id, res => {
+    this.home.setProductDetail(this.navParams.get("product_id"), res => {
       this.product = res.data;
-
       setTimeout(() => {
         let position =
           (this.images.nativeElement.scrollWidth -
@@ -44,10 +44,9 @@ export class ProductDetailPage {
     });
   }
 
-  // ionViewDidEnter() {
-  //   this.statusBar.overlaysWebView(true);
-  //   this.statusBar.styleDefault();
-  // }
+  ionViewDidEnter() {
+    this.statusBar.styleDefault();
+  }
 
   firstImage() {
     for (var key in this.product.image_url) {

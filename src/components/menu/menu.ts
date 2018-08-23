@@ -13,7 +13,8 @@ import { QrService } from "../../services/qr.service";
   templateUrl: "menu.html"
 })
 export class MenuComponent {
-  @Input("url") image_1: string;
+  @Input("url")
+  image_1: string;
   constructor(public navCtrl: NavController, private qr: QrService) {}
 
   goBack() {
@@ -25,13 +26,14 @@ export class MenuComponent {
   }
 
   goQr() {
-    this.qr
-      .scan()
-      .then(data => {
-        console.log(data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // this.qr
+    //   .scan()
+    //   .then(data => {
+    //     console.log(data);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+    this.navCtrl.push("ArPage");
   }
 }

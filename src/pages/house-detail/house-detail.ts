@@ -47,6 +47,10 @@ export class HouseDetailPage {
     this.navCtrl.push("ProductDetailPage", { product_id: product_id });
   }
 
+  goGallery(house) {
+    this.navCtrl.push("HouseGalleryPage", { house: house });
+  }
+
   objectSize(obj) {
     var size = 0,
       key;
@@ -54,19 +58,5 @@ export class HouseDetailPage {
       if (obj.hasOwnProperty(key)) size++;
     }
     return size;
-  }
-
-  onScroll(e) {
-    if (e.scrollTop > 30) {
-      this.statusBar.backgroundColorByHexString("4bb29d");
-      this.statusBar.styleDefault();
-      this.firstStatusBar = true;
-    } else {
-      this.statusBar.styleLightContent();
-      if (this.firstStatusBar) {
-        this.statusBar.overlaysWebView(true);
-        this.firstStatusBar = false;
-      }
-    }
   }
 }
