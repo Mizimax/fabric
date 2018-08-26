@@ -1,0 +1,56 @@
+<!-- Generated template for the ModalComponent component -->
+<div>
+  <div class="modal" [ngClass]="{'modal--hide': !modalStatus, 'modal--fade': modalStatus}">
+    <div class="modal__box">
+      <div class="modal__box__content">
+        <div *ngIf="type === 'flag'" class="modal__box__content__flag" align="center">
+          <h1 class="header-font nomargin" align="center">badge</h1>
+          <ion-row class="flag-row">
+            <ion-col col-auto>
+              <img src="assets/imgs/flag_gold.png" width="60">
+            </ion-col>
+            <ion-col class="flag-detail">
+              <div class="absolute middle-left">555555</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="flag-row">
+            <ion-col col-auto>
+              <img src="assets/imgs/flag_silver.png" width="60">
+            </ion-col>
+            <ion-col class="flag-detail">
+              <div class="absolute middle-left">5555</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="flag-row">
+            <ion-col col-auto>
+              <img src="assets/imgs/flag_bronze.png" width="60">
+            </ion-col>
+            <ion-col class="flag-detail">
+              <div class="absolute middle-left">5555</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="flag-row">
+            <ion-col col-auto>
+              <img src="assets/imgs/flag_normal.png" width="60">
+            </ion-col>
+            <ion-col class="flag-detail">
+              <div class="absolute middle-left">5555</div>
+            </ion-col>
+          </ion-row>
+        </div>
+        <div *ngIf="content && type === 'color'" class="modal__box__content__color" align="center">
+          <div class="header-font house-font">{{ content.house_name }}</div>
+          <div class="badge badge-max">{{ content.house_province }}</div>
+          <div class="color" [style.backgroundColor]="'#'+content.house_color[house_index-1].color_code"></div>
+          <div class="header-font house-font">{{ content.house_color[house_index-1].color_name }}</div>
+          <div class="color_detail">{{ content.house_color[house_index-1].color_text }}</div>
+
+        </div>
+
+      </div>
+      <div align="center">
+        <img class="modal__box__close" src="assets/imgs/close.modal.png" (click)="closeModal()">
+      </div>
+    </div>
+  </div>
+</div>

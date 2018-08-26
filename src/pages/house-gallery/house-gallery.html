@@ -6,7 +6,14 @@
 -->
 
 <ion-content padding>
-  <div class="container paddingMenu">
+  <div *ngIf="house" class="show" [ngClass]="{'hide': !modalStatus}" align="center">
+    <img [src]="house.house_image[show]" class="show__image">
+    <br>
+    <br>
+    <img class="modal__box__close" src="assets/imgs/close.modal.png" (click)="modalStatus = !modalStatus">
+  </div>
+  <div class="container paddingMenu" [ngClass]="{'modal--blur': modalStatus}">
+
     <div class="house" *ngIf="house">
       <div class="house_name" align="center">
         {{ house.house_name }}
@@ -21,17 +28,12 @@
       </div>
       <div class="house_images">
         <ion-row>
-          <ion-col class="house_image" [style.backgroundImage]="'url('+ house.house_image +')'">
-          </ion-col>
-          <ion-col class="house_image" [style.backgroundImage]="'url('+ house.house_image +')'">
-          </ion-col>
-          <ion-col class="house_image" [style.backgroundImage]="'url('+ house.house_image +')'">
-          </ion-col>
-          <ion-col class="house_image" [style.backgroundImage]="'url('+ house.house_image +')'">
+          <ion-col *ngFor="let img of house.house_image" class="house_image" [style.backgroundImage]="'url('+ img +')'" (click)="modalStatus = !modalStatus">
           </ion-col>
         </ion-row>
       </div>
     </div>
+    <menu></menu>
   </div>
-  <menu></menu>
+
 </ion-content>

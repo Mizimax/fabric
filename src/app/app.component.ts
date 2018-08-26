@@ -22,7 +22,7 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.home.setHome(() => splashScreen.hide());
+      splashScreen.hide();
       statusBar.overlaysWebView(true);
     });
   }

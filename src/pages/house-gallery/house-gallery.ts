@@ -16,6 +16,8 @@ import { StatusBar } from "@ionic-native/status-bar";
 })
 export class HouseGalleryPage {
   public house;
+  public modalStatus = false;
+  public show = 0;
 
   constructor(
     public navCtrl: NavController,

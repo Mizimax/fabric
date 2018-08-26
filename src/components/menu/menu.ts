@@ -25,15 +25,7 @@ export class MenuComponent {
     this.navCtrl.popTo(this.navCtrl.getByIndex(1));
   }
 
-  goQr() {
-    // this.qr
-    //   .scan()
-    //   .then(data => {
-    //     console.log(data);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
-    this.navCtrl.push("ArPage");
+  goGallery(house) {
+    this.navCtrl.push("HouseGalleryPage", { house: house });
   }
 }

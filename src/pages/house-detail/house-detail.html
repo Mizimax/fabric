@@ -8,53 +8,60 @@
 
   <ion-spinner *ngIf="!house" name="crescent"></ion-spinner>
   <div class="container paddingMenu">
-    <div class="house" *ngIf="house">
-      <div class="cover">
-        <div class="bg" [style.backgroundImage]="'url('+ house.house_image +')'"></div>
-
-        <div class="house_name" align="center">
-          {{ house.house_name }}
-        </div>
-        <div class="province" align="center">
-          <div class="badge">{{ house.house_province }}</div>
-        </div>
-        <div class="house_image" [style.backgroundImage]="'url('+ house.house_image +')'"></div>
-        <div class="house_gallery" (click)="goGallery(house)">
-          <img src="assets/imgs/gallery.png" width="60">
-        </div>
-        <div class="contact">
-          <div class="map child">
-            <div>
-              <img src="assets/imgs/map.png" width="15">
-            </div>
-            <div>{{ house.house_province }}
-              <br>{{ house.house_name }}</div>
-          </div>
-          <div class="tel child">
-            <div>
-              <img src="assets/imgs/tel.png" width="18">
-            </div>
-            <div>{{ house.house_phone }}</div>
+    <div class="house" #content *ngIf="house">
+      <div [ngClass]="{'modal--blur': modalStatus}">
+        <div class="bg">
+          <video #vid width="100%" height="100%" onclick="this.play()" (click)="play()" (ended)="vidEnded()">
+            <source src="https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4#t=0.5" type="video/mp4" />
+          </video>
+          <div class="absolute middle" *ngIf="playBut" (click)="vid.play();play()">
+            <img src="assets/imgs/play.png" width="64">
           </div>
         </div>
-      </div>
-      <div class="house--content" align="center">
-        <h4>{{ house.house_name }} Collection</h4>
-        <div class="collection">
-          <ion-slides [spaceBetween]="-250" slidesPerView="1" [centeredSlides]="true" [initialSlide]="objectSize(house.products)/2">
-            <ion-slide *ngFor="let product of house.products | keys">
-              <div class="eiei" [style.backgroundImage]="'url('+ product.value.image_url[0] +')'" (click)="goProduct(product.value.product_id)">
-                <div class="product_name">
-                  <span *ngIf="product.value.product_limited === 1 ? true: false" class="limit">LIMITED PRODUCT</span>
-                  {{ product.value.product_name }}
+        <div class="relative">
+          <div class="house_image" [style.backgroundImage]="'url('+ house.house_image[0] +')'"></div>
+          <div class="items">
+            <div class="flag">
+              <img class="flag__image" src="assets/imgs/flag_gold.png" width="100" (click)="changeType('flag');modalToggle()">
+            </div>
+            <div class="contact">
+              <div class="map" (click)="openMap()">
+                <div align="center">
+                  <img src="assets/imgs/map.png" width="35">
                 </div>
+                <br>
+                <div>{{ house.house_province }}</div>
               </div>
-            </ion-slide>
-          </ion-slides>
+              <div class="tel" (click)="call(house.house_phone)">
+                <div align="center">
+                  <img src="assets/imgs/phone.png" width="23">
+                </div>
+                <br>
+                <div>{{ house.house_phone }}</div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="house--content" align="center">
+            <div class="product_detail">
+              <h1 class="header-font">about {{ house.house_name }}</h1>
+              <div class="detail">
+                {{ house.house_detail }}
+              </div>
+              <h1 class="header-font">house colors</h1>
+              <div class="color" *ngFor="let color of house.house_color; let i = index" [style.backgroundColor]="'#'+color.color_code"
+                (click)="house_index=i+1;changeType('color');modalToggle()"></div>
+            </div>
+
+          </div>
         </div>
-        <div class="house_detail">{{ house.house_detail }}</div>
+
+        <menu [url]="house"></menu>
       </div>
+      <modal [modalStatus]="modalStatus" [type]="type" [content]="house" [index]="house_index" (close)="changeType('color');modalToggle()"></modal>
     </div>
+
   </div>
-  <menu></menu>
+
 </ion-content>

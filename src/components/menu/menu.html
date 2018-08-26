@@ -1,24 +1,12 @@
 <!-- Generated template for the MenuComponent component -->
 <div>
-  <div class="blurbg" [ngClass]="{'blur': image_1 ? true : false}" [style.backgroundImage]="'url('+ image_1 +')'">
-
-  </div>
   <div class="content">
-    <ion-row>
-      <ion-col (click)="goBack()">
-        <img src="assets/imgs/back.menu.png" width="31">
-        <div class="icon-txt" [style.color]="image_1 ? 'white' : 'black'">Back</div>
+    <ion-row class="rows">
+      <ion-col (click)="goBack()" class="qr">
+        <img src="assets/imgs/back.menu.png" width="20">
       </ion-col>
-      <ion-col>
-        <div *ngIf="!image_1" (click)="goHome()">
-          <img src="assets/imgs/home.menu.png" width="38">
-          <div class="icon-txt" [style.color]="image_1 ? 'white' : 'black'">Home</div>
-        </div>
-      </ion-col>
-      <ion-col (click)="goQr()" class="qr">
-        <img src="assets/imgs/qr.menu.png" width="25">
-        <div class="icon-txt" [style.color]="image_1 ? 'white' : 'black'">QR</div>
+      <ion-col *ngIf="image_1" (click)="goGallery(image_1)" class="qr">
+        <img src="assets/imgs/qr.menu.png" width="50">
       </ion-col>
     </ion-row>
   </div>
-</div>

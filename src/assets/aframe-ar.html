@@ -9,24 +9,14 @@
   <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
 
-    <a-marker-camera type='pattern' url='./pattern-marker.patt'>
+    <a-marker-camera type='pattern' url='./pattern/house_1/1.patt'>
 
       <!-- Using the asset management system. -->
       <!-- <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20"></a-video> -->
 
       <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
       <a-entity rotation="270 360 0">
-        <a-video src="yourvideo.mp4"></a-video>
-      </a-entity>
-    </a-marker-camera>
-    <a-marker-camera type='pattern' url='./pattern2.patt'>
-
-      <!-- Using the asset management system. -->
-      <!-- <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20"></a-video> -->
-
-      <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
-      <a-entity rotation="270 360 0">
-        <a-video src="yourvideo.mp4"></a-video>
+        <a-video src="https://fabricotop.herokuapp.com/images/product/1/1.mp4"></a-video>
       </a-entity>
     </a-marker-camera>
 

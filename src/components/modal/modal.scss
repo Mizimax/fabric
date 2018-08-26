@@ -1,0 +1,76 @@
+modal {
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    transition: all 0.5s;
+  }
+  .modal--hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .modal--fade {
+    opacity: 1;
+    visibility: visible;
+  }
+  .modal__box__content {
+    margin-top: 20px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  .flag-detail {
+    margin-left: 10px;
+  }
+  .flag-detail div {
+    font-size: 11px;
+  }
+  .flag-row {
+    width: 85%;
+  }
+  .nomargin {
+    margin-bottom: -10px;
+  }
+  .badge-max {
+    background: #29364a;
+    color: white;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+  }
+  .color {
+    margin-top: 10px;
+    height: 150px !important;
+    width: 85% !important;
+  }
+  .color_detail {
+    width: 85%;
+    margin-top: 20px;
+  }
+  .house-font {
+    font-size: 36px;
+    margin-bottom: 5px;
+  }
+  .modal__box {
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    transform: translate(-50%, 0);
+    max-width: 300px;
+    width: 90%;
+    min-height: 80%;
+    background: white;
+    z-index: 9999;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
+  }
+  .modal__box__close {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
