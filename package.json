@@ -70,7 +70,6 @@
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
       "com.telerik.plugins.nativepagetransitions": {},
-      "com.wikitude.phonegap.WikitudePlugin": {},
       "mx.ferreyra.callnumber": {}
     },
     "platforms": [
