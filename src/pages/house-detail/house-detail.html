@@ -11,12 +11,12 @@
     <div class="house" #content *ngIf="house">
       <div [ngClass]="{'modal--blur': modalStatus}">
         <div class="bg">
-          <video #vid width="100%" height="100%" onclick="this.play()" (click)="play()" (ended)="vidEnded()">
-            <source src="https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4#t=0.5" type="video/mp4" />
+          <video autoplay #vid width="100%" height="100%" onclick="this.play()" (click)="play()" (ended)="vidEnded()">
+            <source [src]="house.house_video+'#t=0.5'" type="video/mp4" />
           </video>
-          <div class="absolute middle" *ngIf="playBut" (click)="vid.play();play()">
+          <!-- <div class="absolute middle" *ngIf="playBut" (click)="vid.play();play()">
             <img src="assets/imgs/play.png" width="64">
-          </div>
+          </div> -->
         </div>
         <div class="relative">
           <div class="house_image" [style.backgroundImage]="'url('+ house.house_image[0] +')'"></div>

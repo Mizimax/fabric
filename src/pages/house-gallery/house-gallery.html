@@ -23,12 +23,13 @@
       </div>
       <div class="video">
         <video height="240" controls>
-          <source [src]="house.house_video" type="video/mp4"> Your browser does not support the video tag.
+          <source [src]="house.house_video+'#t=0.5'" type="video/mp4"> Your browser does not support the video tag.
         </video>
       </div>
       <div class="house_images">
         <ion-row>
-          <ion-col *ngFor="let img of house.house_image" class="house_image" [style.backgroundImage]="'url('+ img +')'" (click)="modalStatus = !modalStatus">
+          <ion-col *ngFor="let img of house.house_image; let i = index" class="house_image" [style.backgroundImage]="'url('+ img +')'"
+            (click)="show = i;modalStatus = !modalStatus">
           </ion-col>
         </ion-row>
       </div>

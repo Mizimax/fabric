@@ -7,16 +7,50 @@
 
 <body style='margin : 0px; overflow: hidden; '>
   <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
+    <a-assets>
+      <video src="https://firebasestorage.googleapis.com/v0/b/splendor-5c892.appspot.com/o/2.mp4?alt=media&token=31b28134-a149-4d1c-b032-54fc5fc6146e"
+        id="vid_house_2"></video>
+    </a-assets>
 
     <a-marker-camera type='pattern' url='./pattern/house_1/1.patt'>
-
-      <!-- Using the asset management system. -->
-      <!-- <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20"></a-video> -->
-
-      <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
       <a-entity rotation="270 360 0">
-        <a-video src="https://fabricotop.herokuapp.com/images/product/1/1.mp4"></a-video>
+        <a-video src="#vid_house_2"></a-video>
+      </a-entity>
+    </a-marker-camera>
+
+    <a-marker-camera type='pattern' url='./pattern/house_1/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video src="#vid_house_2"></a-video>
+      </a-entity>
+    </a-marker-camera>
+
+    <a-marker-camera type='pattern' url='./pattern/house_1/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video src="#vid_house_2"></a-video>
+      </a-entity>
+    </a-marker-camera>
+
+    <a-marker-camera type='pattern' url='./pattern/house_2/1.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video src="#vid_house_2"></a-video>
+      </a-entity>
+    </a-marker-camera>
+
+    <a-marker-camera type='pattern' url='./pattern/house_2/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video src="#vid_house_2"></a-video>
+      </a-entity>
+    </a-marker-camera>
+
+    <a-marker-camera type='pattern' url='./pattern/house_2/3.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video src="#vid_house_2"></a-video>
+      </a-entity>
+    </a-marker-camera>
+
+    <a-marker-camera type='pattern' url='./pattern/house_1/2.patt'>
+      <a-entity rotation="270 360 0">
+        <a-video src="#vid_house_2"></a-video>
       </a-entity>
     </a-marker-camera>
 

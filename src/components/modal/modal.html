@@ -43,7 +43,9 @@
           <div class="badge badge-max">{{ content.house_province }}</div>
           <div class="color" [style.backgroundColor]="'#'+content.house_color[house_index-1].color_code"></div>
           <div class="header-font house-font">{{ content.house_color[house_index-1].color_name }}</div>
-          <div class="color_detail">{{ content.house_color[house_index-1].color_text }}</div>
+          <div class="color_detail" align="left" [innerHTML]="content.house_color[house_index-1].color_text">
+
+          </div>
 
         </div>
 
