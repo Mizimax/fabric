@@ -51,8 +51,7 @@
     "phonegap-plugin-barcodescanner": "^8.0.0",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.26",
-    "com.wikitude.phonegap.WikitudePlugin": "C:\\Users\\Maxang\\Desktop\\wikitude-cordova-plugin-master"
+    "zone.js": "0.8.26"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.10",
@@ -74,8 +73,7 @@
       },
       "com.telerik.plugins.nativepagetransitions": {},
       "mx.ferreyra.callnumber": {},
-      "cordova-plugin-android-permissions": {},
-      "com.wikitude.phonegap.WikitudePlugin": {}
+      "cordova-plugin-android-permissions": {}
     },
     "platforms": [
       "ios",
