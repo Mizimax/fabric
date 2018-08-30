@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.fabric.otop" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>fabric-otop</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.2.36:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -88,6 +88,7 @@
     <allow-navigation href="http://192.168.137.1:8100" />
     <allow-navigation href="http://10.5.50.25:8100" />
     <allow-navigation href="http://192.168.137.9:8100" />
+    <allow-navigation href="*" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
@@ -104,6 +105,14 @@
     <allow-navigation href="http://192.168.43.11:8100" />
     <allow-navigation href="http://10.100.248.238:8100" />
     <allow-navigation href="http://192.168.2.36:8100" />
-    <engine name="android" spec="7.0.0" />
+    <plugin name="com.wikitude.phonegap.WikitudePlugin" spec="C:\Users\Maxang\Desktop\wikitude-cordova-plugin-master" />
+    <allow-navigation href="http://192.168.2.35:8100" />
+    <allow-navigation href="http://10.35.245.163:8100" />
+    <allow-navigation href="http://192.168.2.38:8100" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="data:*" />
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <engine name="ios" spec="^4.5.4" />
+    <engine name="android" spec="7.0.0" />
 </widget>
