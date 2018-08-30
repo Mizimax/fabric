@@ -105,7 +105,6 @@
     <allow-navigation href="http://192.168.43.11:8100" />
     <allow-navigation href="http://10.100.248.238:8100" />
     <allow-navigation href="http://192.168.2.36:8100" />
-    <plugin name="com.wikitude.phonegap.WikitudePlugin" spec="C:\Users\Maxang\Desktop\wikitude-cordova-plugin-master" />
     <allow-navigation href="http://192.168.2.35:8100" />
     <allow-navigation href="http://10.35.245.163:8100" />
     <allow-navigation href="http://192.168.2.38:8100" />
@@ -113,6 +112,6 @@
     <allow-navigation href="https://*/*" />
     <allow-navigation href="data:*" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
-    <engine name="ios" spec="^4.5.4" />
+    <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="7.0.0" />
 </widget>
