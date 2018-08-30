@@ -10,6 +10,8 @@ export class HomeService {
   public product_detail = {};
   public house_detail = {};
 
+  public firstLoad: boolean = true;
+
   constructor(private http: HTTP) {}
   public async setHome(callback) {
     try {
@@ -103,7 +105,7 @@ export class HomeService {
       this.house_detail = { ...this.house_detail, [house_id]: ress };
       callback(ress);
     } catch (error) {
-      console.log(error);
+      callback(error);
     }
   }
 

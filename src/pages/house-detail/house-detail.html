@@ -9,58 +9,71 @@
   <ion-spinner *ngIf="!house" name="crescent"></ion-spinner>
   <div class="container paddingMenu">
     <div class="house" #content *ngIf="house">
+
       <div [ngClass]="{'modal--blur': modalStatus}">
-        <div class="bg">
-          <video autoplay #vid width="100%" height="100%" onclick="this.play()" (click)="play()" (ended)="vidEnded()">
-            <source [src]="house.house_video+'#t=0.5'" type="video/mp4" />
-          </video>
-          <!-- <div class="absolute middle" *ngIf="playBut" (click)="vid.play();play()">
+        <div class="error header-font" *ngIf="error_msg">
+          {{ error_msg }}
+        </div>
+        <div *ngIf="!error_msg">
+          <div class="bg">
+            <video autoplay #vid width="100%" height="100%" onclick="this.play()" (click)="play()" (ended)="vidEnded()">
+              <source [src]="house.house_video+'#t=0.5'" type="video/mp4" />
+            </video>
+            <!-- <div class="absolute middle" *ngIf="playBut" (click)="vid.play();play()">
             <img src="assets/imgs/play.png" width="64">
           </div> -->
-        </div>
-        <div class="relative">
-          <div class="house_image" [style.backgroundImage]="'url('+ house.house_image[0] +')'"></div>
-          <div class="items">
-            <div class="flag">
-              <img class="flag__image" src="assets/imgs/flag_gold.png" width="100" (click)="changeType('flag');modalToggle()">
-            </div>
-            <div class="contact">
-              <div class="map" (click)="openMap()">
-                <div align="center">
-                  <img src="assets/imgs/map.png" width="35">
-                </div>
-                <br>
-                <div>{{ house.house_province }}</div>
-              </div>
-              <div class="tel" (click)="call(house.house_phone)">
-                <div align="center">
-                  <img src="assets/imgs/phone.png" width="23">
-                </div>
-                <br>
-                <div>{{ house.house_phone }}</div>
-              </div>
-
-            </div>
-
           </div>
-          <div class="house--content" align="center">
-            <div class="product_detail">
-              <h1 class="header-font">about {{ house.house_name }}</h1>
-              <div class="detail">
-                {{ house.house_detail }}
+          <div class="relative">
+            <div class="house_image" [style.backgroundImage]="'url('+ house.house_image[0] +')'"></div>
+            <div class="items">
+              <div class="flag">
+                <img *ngIf="house.house_flag === 'A1'" class="flag__image" src="assets/imgs/flag_gold.png" width="100" (click)="changeType('flag');modalToggle()">
+                <img *ngIf="house.house_flag === 'A2'" class="flag__image" src="assets/imgs/flag_silver.png" width="100" (click)="changeType('flag');modalToggle()">
+                <img *ngIf="house.house_flag === 'B1'" class="flag__image" src="assets/imgs/flag_bronze.png" width="100" (click)="changeType('flag');modalToggle()">
+                <img *ngIf="house.house_flag === 'B2'" class="flag__image" src="assets/imgs/flag_normal.png" width="100" (click)="changeType('flag');modalToggle()">
               </div>
-              <h1 class="header-font">house colors</h1>
-              <div class="color" *ngFor="let color of house.house_color; let i = index" [style.backgroundColor]="'#'+color.color_code"
-                (click)="house_index=i+1;changeType('color');modalToggle()"></div>
-            </div>
+              <div class="contact">
+                <div class="map" (click)="openMap()">
+                  <div align="center">
+                    <img src="assets/imgs/map.png" width="35">
+                  </div>
+                  <br>
+                  <div>{{ house.house_province }}</div>
+                </div>
+                <div class="tel" (click)="call(house.house_phone)">
+                  <div align="center">
+                    <img src="assets/imgs/phone.png" width="23">
+                  </div>
+                  <br>
+                  <div>{{ house.house_phone }}</div>
+                </div>
 
+              </div>
+
+            </div>
+            <div class="house--content" align="center">
+              <div class="product_detail">
+                <h1 class="header-font">{{ house.house_name }}</h1>
+                <div class="detail">
+                  <span *ngIf="house.house_flag === 'A1'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 80% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือประณีต มีเอกลักษณ์</span>
+                  <span *ngIf="house.house_flag === 'A2'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 50% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือดี มีเอกลักษณ์</span>
+                  <span *ngIf="house.house_flag === 'B1'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 30% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือดี</span>
+                  <span *ngIf="house.house_flag === 'B2'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 20% ย้อมสีธรรมชาติ ฝีมือดี มีศักยภาพในการพัฒนาในอนาคต</span>
+                </div>
+                <h1 class="header-font">house colors</h1>
+                <div class="color" *ngFor="let color of house.house_color; let i = index" [style.backgroundColor]="'#'+color.color_code"
+                  (click)="house_index=i+1;changeType('color');modalToggle()"></div>
+              </div>
+
+            </div>
           </div>
         </div>
 
-        <menu [url]="house"></menu>
+        <menu [url]="house" [error]="error_msg"></menu>
       </div>
-      <modal [modalStatus]="modalStatus" [type]="type" [content]="house" [index]="house_index" (close)="changeType('color');modalToggle()"></modal>
+
     </div>
+    <modal [modalStatus]="modalStatus" [type]="type" [content]="house" [index]="house_index" (close)="changeType('color');modalToggle()"></modal>
 
   </div>
 

@@ -5,8 +5,9 @@
       <ion-col (click)="goBack()" class="qr">
         <img src="assets/imgs/back.menu.png" width="20">
       </ion-col>
-      <ion-col *ngIf="image_1" (click)="goGallery(image_1)" class="qr">
+      <ion-col *ngIf="image_1 && !error" (click)="goGallery(image_1)" class="qr">
         <img src="assets/imgs/qr.menu.png" width="50">
       </ion-col>
     </ion-row>
   </div>
+</div>

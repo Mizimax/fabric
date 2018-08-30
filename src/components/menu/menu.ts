@@ -15,6 +15,8 @@ import { QrService } from "../../services/qr.service";
 export class MenuComponent {
   @Input("url")
   image_1: string;
+  @Input("error")
+  error: string;
   constructor(public navCtrl: NavController, private qr: QrService) {}
 
   goBack() {

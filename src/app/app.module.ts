@@ -13,6 +13,7 @@ import { HomeService } from "../services/home.service";
 import { QrService } from "../services/qr.service";
 import { NativePageTransitions } from "@ionic-native/native-page-transitions";
 import { CallNumber } from "@ionic-native/call-number";
+import { AndroidPermissions } from "@ionic-native/android-permissions";
 
 @NgModule({
   declarations: [MyApp, HomePage],
@@ -34,6 +35,7 @@ import { CallNumber } from "@ionic-native/call-number";
     BarcodeScanner,
     NativePageTransitions,
     CallNumber,
+    AndroidPermissions,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

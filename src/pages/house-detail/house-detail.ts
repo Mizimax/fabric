@@ -25,6 +25,7 @@ export class HouseDetailPage {
   public modalStatus: boolean = false;
   public type = "flag";
   public house_index = 1;
+  public error_msg = "";
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -37,9 +38,15 @@ export class HouseDetailPage {
     console.log("ionViewDidLoad HouseDetailPage");
     this.house_id = this.navParams.get("house_id");
     this.home.setHouseDetail(this.house_id, res => {
-      this.house = res.data;
-      this.house.house_color = JSON.parse(res.data.house_color);
-      this.house.house_image = JSON.parse(res.data.house_image);
+      if (res.status === "SUCCESS") {
+        this.house = res.data;
+        this.house.house_color = JSON.parse(res.data.house_color);
+        this.house.house_image = JSON.parse(res.data.house_image);
+      } else {
+        this.house = res;
+        this.error_msg = "ไม่พบบ้านนี้ !";
+      }
+      console.log(res);
     });
   }
 
