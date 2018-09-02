@@ -26,6 +26,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       splashScreen.hide();
       statusBar.overlaysWebView(true);
+      if (platform.is("ios")) {
+        statusBar.styleDefault();
+      }
 
       this.androidPermissions
         .checkPermission(this.androidPermissions.PERMISSION.CAMERA)
