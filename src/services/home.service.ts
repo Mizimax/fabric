@@ -97,7 +97,7 @@ export class HomeService {
       return callback(this.house_detail[house_id]);
     try {
       let { data } = await this.http.get(
-        "https://fabricotop.herokuapp.com/api/v1/house/" + house_id,
+        "https://thaicolorid.com/api/v1/house/" + house_id,
         {},
         {}
       );
