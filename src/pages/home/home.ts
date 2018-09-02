@@ -9,6 +9,8 @@ import { Platform } from "ionic-angular";
   templateUrl: "home.html"
 })
 export class HomePage {
+  public ios = false;
+
   constructor(
     private qr: QrService,
     public navCtrl: NavController,
@@ -19,9 +21,6 @@ export class HomePage {
   }
 
   ionViewWillLoad() {
-    if (this.platform.is("ios")) {
-      this.goToQr();
-    }
     // this.androidPermissions
     //   .checkPermission(this.androidPermissions.PERMISSION.CAMERA)
     //   .then(
@@ -48,6 +47,11 @@ export class HomePage {
     if (!this.home.firstLoad)
       (<any>document).getElementById("frame").contentWindow.location.reload();
     else this.home.firstLoad = false;
+
+    if (this.platform.is("ios")) {
+      this.ios = true;
+      this.goToQr();
+    }
   }
 
   goToQr() {
