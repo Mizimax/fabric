@@ -41,6 +41,10 @@ export class HomePage {
     //         this.androidPermissions.PERMISSION.CAMERA
     //       )
     //   );
+    if (this.platform.is("ios")) {
+      this.ios = true;
+      this.goToQr();
+    }
   }
 
   ionViewDidEnter() {
