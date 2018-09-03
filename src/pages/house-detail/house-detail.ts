@@ -21,11 +21,14 @@ export class HouseDetailPage {
   private firstStatusBar = false;
   private house_id;
   public house;
-  public playBut = true;
+  public playBut = false;
   public modalStatus: boolean = false;
   public type = "flag";
   public house_index = 1;
   public error_msg = "";
+
+  @ViewChild('vid') vid;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -46,12 +49,16 @@ export class HouseDetailPage {
         this.house = res;
         this.error_msg = "ไม่พบบ้านนี้ !";
       }
+      setTimeout(() => {
+        this.vid.nativeElement.play();
+      }, 500);
       console.log(res);
     });
   }
 
   ionViewDidEnter() {
     this.statusBar.styleLightContent();
+
   }
 
   changeType(type) {
