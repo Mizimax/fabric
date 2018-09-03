@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { HomeService } from "../../services/home.service";
 import { StatusBar } from "@ionic-native/status-bar";
 import { CallNumber } from "@ionic-native/call-number";
+import { Platform } from "ionic-angular";
 declare var $: any;
 
 /**
@@ -34,7 +35,8 @@ export class HouseDetailPage {
     public navParams: NavParams,
     public statusBar: StatusBar,
     private home: HomeService,
-    private callNumber: CallNumber
+    private callNumber: CallNumber,
+    private platform: Platform
   ) {}
 
   ionViewDidLoad() {
@@ -57,8 +59,10 @@ export class HouseDetailPage {
   }
 
   ionViewDidEnter() {
-    this.statusBar.styleLightContent();
-
+    if(this.platform.is('ios'))
+      this.statusBar.styleDefault();
+    else
+      this.statusBar.styleLightContent();
   }
 
   changeType(type) {

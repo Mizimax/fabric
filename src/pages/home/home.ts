@@ -44,13 +44,14 @@ export class HomePage {
   }
 
   ionViewDidEnter() {
-    if (!this.home.firstLoad)
-      (<any>document).getElementById("frame").contentWindow.location.reload();
-    else this.home.firstLoad = false;
-
     if (this.platform.is("ios")) {
       this.ios = true;
       this.goToQr();
+    }
+    else {
+      if (!this.home.firstLoad)
+        (<any>document).getElementById("frame").contentWindow.location.reload();
+      else this.home.firstLoad = false;
     }
   }
 
@@ -58,12 +59,18 @@ export class HomePage {
     this.qr
       .scan()
       .then(data => {
-        if (!data.cancelled)
+        if (!data.cancelled){
           this.navCtrl.push("HouseDetailPage", { house_id: data.text });
-        else
+        }
+        else {
+          if(this.platform.is('ios'))
+            this.goToQr();
+          else
           (<any>document)
             .getElementById("frame")
             .contentWindow.location.reload();
+        }
+        
       })
       .catch(err => console.log(err));
   }
