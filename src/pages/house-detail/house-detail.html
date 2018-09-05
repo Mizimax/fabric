@@ -59,7 +59,7 @@
                 <div class="color" *ngFor="let color of house.house_color; let i = index" [style.backgroundColor]="'#'+color.color_code"
                   (click)="house_index=i+1;changeType('color');modalToggle()"></div>
                 <h1 class="header-font colorid">story</h1>
-                <div class="detail" [innerHTML]="house.house_detail">
+                <div class="detail" [innerHTML]="house.house_detail" align="left">
                   <!-- <span *ngIf="house.house_flag === 'A1'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 80% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือประณีต มีเอกลักษณ์</span>
                   <span *ngIf="house.house_flag === 'A2'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 50% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือดี มีเอกลักษณ์</span>
                   <span *ngIf="house.house_flag === 'B1'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 30% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือดี</span>
