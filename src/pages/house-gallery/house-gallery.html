@@ -28,9 +28,10 @@
       </div>
       <div class="house_images">
         <ion-row>
-          <ion-col *ngFor="let img of house.house_image; let i = index" *ngIf="i === 0" class="house_image" [style.backgroundImage]="'url('+ img +')'"
-            (click)="show = i;modalStatus = !modalStatus">
-          </ion-col>
+          <ng-container *ngFor="let img of house.house_image; let i = index">
+            <ion-col *ngIf="i !== 0" class="house_image" [style.backgroundImage]="'url('+ img +')'" (click)="show = i;modalStatus = !modalStatus">
+            </ion-col>
+          </ng-container>
         </ion-row>
       </div>
     </div>
