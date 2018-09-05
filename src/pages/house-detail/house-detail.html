@@ -15,13 +15,13 @@
           {{ error_msg }}
         </div>
         <div *ngIf="!error_msg">
-          <div class="bg">
-            <video autoplay="false" muted="false" #vid width="100%" height="100%" onclick="this.play()" (click)="play()" (ended)="vidEnded()">
+          <div class="bg" [style.backgroundImage]="'url(' + house.house_image[0] + ')'">
+            <!-- <video autoplay="false" muted="false" #vid width="100%" height="100%" onclick="this.play()" (click)="play()" (ended)="vidEnded()">
               <source [src]="house.house_video+'#t=0.5'" type="video/mp4" />
             </video>
             <div class="absolute middle" *ngIf="playBut" (click)="vid.play();play()">
               <img src="assets/imgs/play.png" width="64">
-            </div>
+            </div> -->
           </div>
           <div class="relative">
             <div class="house_image" [style.backgroundImage]="'url('+ house.house_image[0] +')'"></div>

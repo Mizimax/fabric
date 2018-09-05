@@ -20,7 +20,9 @@ page-house-detail {
   }
   .bg {
     position: relative;
-    background: #ccc;
+    background-size: cover;
+    background-position: center center;
+    height: 200px;
   }
 
   .house_name {
