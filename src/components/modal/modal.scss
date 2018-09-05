@@ -50,7 +50,7 @@ modal {
     font-size: 13.5px;
   }
   .house-font {
-    font-size: 36px;
+    font-size: 22px;
     margin-bottom: 5px;
   }
   .modal__box {
@@ -72,5 +72,16 @@ modal {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+  }
+  .deltae {
+    position: absolute;
+    bottom: 28px;
+    right: 30px;
+  }
+  .deltae__badge {
+    background: red;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
   }
 }

@@ -43,16 +43,15 @@ export class HomePage {
     //   );
     if (this.platform.is("ios")) {
       this.ios = true;
-      this.goToQr();
+      // this.goToQr();
     }
   }
 
   ionViewDidEnter() {
     if (this.platform.is("ios")) {
       this.ios = true;
-      this.goToQr();
-    }
-    else {
+      // this.goToQr();
+    } else {
       if (!this.home.firstLoad)
         (<any>document).getElementById("frame").contentWindow.location.reload();
       else this.home.firstLoad = false;
@@ -63,19 +62,20 @@ export class HomePage {
     this.qr
       .scan()
       .then(data => {
-        if (!data.cancelled){
+        if (!data.cancelled) {
           this.navCtrl.push("HouseDetailPage", { house_id: data.text });
-        }
-        else {
-          if(this.platform.is('ios'))
-            this.goToQr();
+        } else {
+          if (this.platform.is("ios")) this.ios = true;
           else
-          (<any>document)
-            .getElementById("frame")
-            .contentWindow.location.reload();
+            (<any>document)
+              .getElementById("frame")
+              .contentWindow.location.reload();
         }
-        
       })
       .catch(err => console.log(err));
+  }
+
+  goToHouseList() {
+    this.navCtrl.push("HouseListPage");
   }
 }

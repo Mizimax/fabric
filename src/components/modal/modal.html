@@ -43,15 +43,21 @@
           <div class="badge badge-max">{{ content.house_province }}</div>
           <div class="color" [style.backgroundColor]="'#'+content.house_color[house_index-1].color_code"></div>
           <div class="header-font house-font">{{ content.house_color[house_index-1].color_name }}</div>
+
           <div class="color_detail" align="left" [innerHTML]="content.house_color[house_index-1].color_text">
 
           </div>
+
 
         </div>
 
       </div>
       <div align="center">
         <img class="modal__box__close" src="assets/imgs/close.modal.png" (click)="closeModal()">
+      </div>
+      <div class="deltae">
+        <span class="deltae__badge" tooltip="► 0-1 A normally invisible difference\n► 1-2 Very small difference, only obvious to a trained eye\n► 2-3.5 Medium difference, also obvious to an untrained eye\n► 3.5-5 An obvious difference\n► > 6 A very obvious difference"
+          positionV="top" duration="5000">&Delta;E ?</span>
       </div>
     </div>
   </div>

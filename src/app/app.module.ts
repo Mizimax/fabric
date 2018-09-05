@@ -15,10 +15,13 @@ import { NativePageTransitions } from "@ionic-native/native-page-transitions";
 import { CallNumber } from "@ionic-native/call-number";
 import { AndroidPermissions } from "@ionic-native/android-permissions";
 
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 @NgModule({
   declarations: [MyApp, HomePage],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(MyApp, {
       pageTransition: "ios-transition"
     })

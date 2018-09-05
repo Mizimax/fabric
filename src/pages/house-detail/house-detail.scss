@@ -58,6 +58,10 @@ page-house-detail {
     right: 20px;
     top: 44%;
   }
+  .colorid {
+    display: block;
+    margin-top: 0;
+  }
   .items {
     height: 70px;
   }
@@ -113,9 +117,6 @@ page-house-detail {
     align-items: center;
     margin: 0 10px;
   }
-  .map img {
-    margin-right: 10px;
-  }
   .tel img {
     margin-right: 8px;
   }
@@ -139,6 +140,9 @@ page-house-detail {
     width: 100%;
     text-align: left;
     color: white;
+  }
+  .icon-name {
+    margin-top: -10px;
   }
   .limit {
     font-size: 9px;

@@ -1,13 +1,17 @@
 <ion-content>
   <iframe *ngIf="!ios" id="frame" src="https://thaicolorid.com/vdo2018/aframe-ar.html" width="100%" height="100%" frameborder="0"
     allow="camera"></iframe>
-    
+
   <div *ngIf="ios" class="absolute middle header-font sizebig" align="center">
-    <ion-spinner></ion-spinner><br>
-    loading...
+    AR avaliable in next version ...
   </div>
   <div class="main">
-    <div class="main__qr" (click)="goToQr()">QR</div>
+    <div class="main__house" (click)="goToHouseList()">
+      <img src="assets/imgs/icon.home.png" width="25" class="absolute middle">
+    </div>
+    <div class="main__qr" (click)="goToQr()">
+      <img src="assets/imgs/qr.icon.png" width="25" class="absolute middle">
+    </div>
   </div>
 
 </ion-content>

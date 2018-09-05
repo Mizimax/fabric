@@ -8,6 +8,7 @@ export class HomeService {
   public type = new BehaviorSubject<object>({});
   public product = {};
   public product_detail = {};
+  public house_list = [];
   public house_detail = {};
 
   public firstLoad: boolean = true;
@@ -89,6 +90,22 @@ export class HomeService {
       callback(ress);
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  public async setHouseList(callback) {
+    if (!this.isEmpty(this.house_list)) return callback(this.house_list);
+    try {
+      let { data } = await this.http.get(
+        "https://thaicolorid.com/api/v1/houses/",
+        {},
+        {}
+      );
+      let ress = JSON.parse(data);
+      this.house_list = ress.data;
+      callback(ress.data);
+    } catch (error) {
+      callback(error);
     }
   }
 

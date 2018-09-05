@@ -1,0 +1,35 @@
+<!--
+  Generated template for the HouseListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding>
+
+  <div class="container">
+    <div class="header header-font" align="center">house list</div>
+    <div *ngFor="let house of houses; let i = index" class="list" (click)="goHouse(house.house_id)">
+      <ion-row>
+        <ion-col col-auto>
+          <img *ngIf="house.house_flag === 'A1'" class="flag__image" src="assets/imgs/flag_gold.png" width="30">
+          <img *ngIf="house.house_flag === 'A2'" class="flag__image" src="assets/imgs/flag_silver.png" width="30" style="margin-top: 10px">
+          <img *ngIf="house.house_flag === 'B1'" class="flag__image" src="assets/imgs/flag_bronze.png" width="30" style="margin-top: 10px">
+          <img *ngIf="house.house_flag === 'B2'" class="flag__image" src="assets/imgs/flag_normal.png" width="30" style="margin-top: 10px">
+        </ion-col>
+        <ion-col col-auto>
+          <img [src]="getFirstImage(i)" width="40" height="40" class="house_image" style="margin-top: 7px">
+        </ion-col>
+        <ion-col class="house_name content-font">
+          {{ house.house_name }}
+        </ion-col>
+        <ion-col col-auto>
+          <img src="assets/imgs/list.icon.png" width="10" style="margin-top: 15px">
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <menu></menu>
+</ion-content>

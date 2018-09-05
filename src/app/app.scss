@@ -15,6 +15,12 @@
 // automatically applied to the <body> element in the app.
 
 @import "font.scss";
+@import url("https://fonts.googleapis.com/css?family=Prompt");
+
+html,
+body {
+  font-family: "Prompt", sans-serif !important;
+}
 
 .absolute {
   position: absolute;
@@ -48,7 +54,17 @@
 }
 
 .header-font {
-  font-family: $header-font, sans-serif;
+  font-family: $header-font, "Prompt";
+}
+
+.content-font {
+  font-family: "Prompt", sans-serif;
+}
+
+tooltip-box {
+  white-space: pre-wrap !important;
+  width: 100%;
+  text-align: left !important;
 }
 
 .transparent-body {

@@ -1,11 +1,18 @@
 page-home {
-  .main {
+  .main__qr {
     position: fixed;
     bottom: 10px;
     right: 10px;
+    padding: 30px;
+    color: white;
+    background: #31465d;
+    border-radius: 50%;
   }
-  .main__qr {
-    padding: 20px;
+  .main__house {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    padding: 30px;
     color: white;
     background: #31465d;
     border-radius: 50%;
