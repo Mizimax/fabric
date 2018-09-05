@@ -15,7 +15,7 @@
           {{ error_msg }}
         </div>
         <div *ngIf="!error_msg">
-          <div class="bg" [style.backgroundImage]="'url(' + house.house_image[0] + ')'">
+          <div class="bg" [style.backgroundImage]="'url(' + house.house_image[1] + ')'">
             <!-- <video autoplay="false" muted="false" #vid width="100%" height="100%" onclick="this.play()" (click)="play()" (ended)="vidEnded()">
               <source [src]="house.house_video+'#t=0.5'" type="video/mp4" />
             </video>
@@ -59,11 +59,11 @@
                 <div class="color" *ngFor="let color of house.house_color; let i = index" [style.backgroundColor]="'#'+color.color_code"
                   (click)="house_index=i+1;changeType('color');modalToggle()"></div>
                 <h1 class="header-font colorid">story</h1>
-                <div class="detail">
-                  <span *ngIf="house.house_flag === 'A1'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 80% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือประณีต มีเอกลักษณ์</span>
+                <div class="detail" [innerHTML]="house.house_detail">
+                  <!-- <span *ngIf="house.house_flag === 'A1'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 80% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือประณีต มีเอกลักษณ์</span>
                   <span *ngIf="house.house_flag === 'A2'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 50% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือดี มีเอกลักษณ์</span>
                   <span *ngIf="house.house_flag === 'B1'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 30% ย้อมสีธรรมชาติได้มีความแม่นยำสูง ฝีมือดี</span>
-                  <span *ngIf="house.house_flag === 'B2'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 20% ย้อมสีธรรมชาติ ฝีมือดี มีศักยภาพในการพัฒนาในอนาคต</span>
+                  <span *ngIf="house.house_flag === 'B2'">กลุ่มที่ผลิตวัตถุดิบเองเกิน 20% ย้อมสีธรรมชาติ ฝีมือดี มีศักยภาพในการพัฒนาในอนาคต</span> -->
                 </div>
               </div>
 
