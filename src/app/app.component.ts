@@ -40,13 +40,10 @@ export class MyApp {
               this.androidPermissions
                 .requestPermission(this.androidPermissions.PERMISSION.CAMERA)
                 .then(result => {
-                  (<any>document)
-                    .getElementById("frame")
-                    .contentWindow.location.reload();
+                  this.permission.setPermission(true);
                 });
-              this.permission.setPermission(result.hasPermission);
             } else {
-              this.permission.setPermission(result.hasPermission);
+              this.permission.setPermission(true);
             }
           },
           err =>

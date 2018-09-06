@@ -50,7 +50,7 @@ export class HomePage {
     }
 
     this.permission.getPermission().subscribe(allow => {
-      this.permissionAndroid = !allow;
+      this.permissionAndroid = allow;
     });
   }
 
@@ -59,9 +59,16 @@ export class HomePage {
       this.ios = true;
       // this.goToQr();
     } else {
+      this.permissionAndroid = true;
       if (!this.home.firstLoad)
         (<any>document).getElementById("frame").contentWindow.location.reload();
       else this.home.firstLoad = false;
+    }
+  }
+
+  ionViewDidLeave() {
+    if (this.platform.is("android")) {
+      this.permissionAndroid = false;
     }
   }
 
@@ -73,10 +80,12 @@ export class HomePage {
           this.navCtrl.push("HouseDetailPage", { house_id: data.text });
         } else {
           if (this.platform.is("ios")) this.ios = true;
-          else
+          else {
+            this.permissionAndroid = true;
             (<any>document)
               .getElementById("frame")
               .contentWindow.location.reload();
+          }
         }
       })
       .catch(err => console.log(err));
