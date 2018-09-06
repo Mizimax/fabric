@@ -3,6 +3,7 @@ import { QrService } from "../../services/qr.service";
 import { NavController } from "ionic-angular";
 import { HomeService } from "../../services/home.service";
 import { Platform } from "ionic-angular";
+import { PermissionService } from "../../services/permission.service";
 
 @Component({
   selector: "page-home",
@@ -10,12 +11,14 @@ import { Platform } from "ionic-angular";
 })
 export class HomePage {
   public ios = false;
+  public permissionAndroid = false;
 
   constructor(
     private qr: QrService,
     public navCtrl: NavController,
     private home: HomeService,
-    private platform: Platform
+    private platform: Platform,
+    private permission: PermissionService
   ) {
     // navCtrl.push("HouseDetailPage", { house_id: 1 });
   }
@@ -45,6 +48,10 @@ export class HomePage {
       this.ios = true;
       // this.goToQr();
     }
+
+    this.permission.getPermission().subscribe(allow => {
+      this.permissionAndroid = !allow;
+    });
   }
 
   ionViewDidEnter() {

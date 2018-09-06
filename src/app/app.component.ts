@@ -7,6 +7,7 @@ import { HomePage } from "../pages/home/home";
 
 import { HomeService } from "../services/home.service";
 import { AndroidPermissions } from "@ionic-native/android-permissions";
+import { PermissionService } from "../services/permission.service";
 
 @Component({
   templateUrl: "app.html"
@@ -19,7 +20,7 @@ export class MyApp {
     statusBar: StatusBar,
     splashScreen: SplashScreen,
     private androidPermissions: AndroidPermissions,
-    private home: HomeService
+    private permission: PermissionService
   ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -35,7 +36,7 @@ export class MyApp {
         .then(
           result => {
             console.log("Has permission?", result.hasPermission);
-            if (!result.hasPermission)
+            if (!result.hasPermission) {
               this.androidPermissions
                 .requestPermission(this.androidPermissions.PERMISSION.CAMERA)
                 .then(result => {
@@ -43,6 +44,10 @@ export class MyApp {
                     .getElementById("frame")
                     .contentWindow.location.reload();
                 });
+              this.permission.setPermission(result.hasPermission);
+            } else {
+              this.permission.setPermission(result.hasPermission);
+            }
           },
           err =>
             this.androidPermissions.requestPermission(

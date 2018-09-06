@@ -16,6 +16,7 @@ import { CallNumber } from "@ionic-native/call-number";
 import { AndroidPermissions } from "@ionic-native/android-permissions";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { PermissionService } from "../services/permission.service";
 
 @NgModule({
   declarations: [MyApp, HomePage],
@@ -39,6 +40,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     NativePageTransitions,
     CallNumber,
     AndroidPermissions,
+    PermissionService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

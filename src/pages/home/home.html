@@ -1,6 +1,6 @@
 <ion-content>
-  <iframe *ngIf="!ios" id="frame" src="https://thaicolorid.com/vdo2018/aframe-ar.html" width="100%" height="100%" frameborder="0"
-    allow="camera"></iframe>
+  <iframe *ngIf="!ios || permissionAndroid" id="frame" src="https://thaicolorid.com/vdo2018/aframe-ar.html" width="100%" height="100%"
+    frameborder="0" allow="camera"></iframe>
 
   <div *ngIf="ios" class="absolute middle header-font sizebig" align="center">
     ar avaliable in next version ...
