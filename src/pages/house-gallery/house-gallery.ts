@@ -30,6 +30,7 @@ export class HouseGalleryPage {
 
     let house = this.navParams.get("house");
     this.house = house;
+    console.log(house.house_video);
   }
 
   ionViewDidEnter() {

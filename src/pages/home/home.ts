@@ -59,10 +59,10 @@ export class HomePage {
       this.ios = true;
       // this.goToQr();
     } else {
-      this.permissionAndroid = true;
-      if (!this.home.firstLoad)
+      if (!this.home.firstLoad) {
+        this.permissionAndroid = true;
         (<any>document).getElementById("frame").contentWindow.location.reload();
-      else this.home.firstLoad = false;
+      } else this.home.firstLoad = false;
     }
   }
 
