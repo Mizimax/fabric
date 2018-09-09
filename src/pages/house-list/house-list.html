@@ -19,7 +19,7 @@
           <img *ngIf="house.house_flag === 'B2'" class="flag__image" src="assets/imgs/flag_normal.png" width="30" style="margin-top: 10px">
         </ion-col>
         <ion-col col-auto>
-          <img [src]="getFirstImage(i)" width="40" height="40" class="house_image" style="margin-top: 7px">
+          <img-loader [src]="getFirstImage(i)" width="40px" height="40px" [spinner]="false" class="house_image" style="margin-top: 7px"></img-loader>
         </ion-col>
         <ion-col class="house_name content-font">
           {{ house.house_name }}

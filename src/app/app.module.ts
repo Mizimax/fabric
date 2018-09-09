@@ -18,11 +18,14 @@ import { AndroidPermissions } from "@ionic-native/android-permissions";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { PermissionService } from "../services/permission.service";
 
+import { IonicImageLoader } from 'ionic-image-loader';
+
 @NgModule({
   declarations: [MyApp, HomePage],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    IonicImageLoader.forRoot(),
     IonicModule.forRoot(MyApp, {
       pageTransition: "ios-transition"
     })

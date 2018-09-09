@@ -7,7 +7,7 @@
 
 <ion-content padding>
   <div *ngIf="house" class="show" [ngClass]="{'hide': !modalStatus}" align="center">
-    <img [src]="house.house_image[show]" class="show__image">
+    <img-loader [spinner]="false" [src]="house.house_image[show]" useImg class="show__image"></img-loader>
     <br>
     <br>
     <img class="modal__box__close" src="assets/imgs/close.modal.png" (click)="modalStatus = !modalStatus">
@@ -27,7 +27,8 @@
       <div class="house_images">
         <ion-row>
           <ng-container *ngFor="let img of house.house_image; let i = index">
-            <ion-col *ngIf="i !== 0" class="house_image" [style.backgroundImage]="'url('+ img +')'" (click)="show = i;modalStatus = !modalStatus">
+            <ion-col *ngIf="i !== 0" class="house_image">
+              <img-loader [spinner]="false" [src]="img" (click)="show = i;modalStatus = !modalStatus"></img-loader>
             </ion-col>
           </ng-container>
         </ion-row>

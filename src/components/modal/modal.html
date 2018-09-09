@@ -54,7 +54,7 @@
       <div align="center">
         <img class="modal__box__close" src="assets/imgs/close.modal.png" (click)="closeModal()">
       </div>
-      <div class="deltae">
+      <div class="deltae" *ngIf="type !== 'flag'">
         <span class="deltae__badge" tooltip="► 0-1 A normally invisible difference
 ► 1-2 Very small difference, only obvious to a trained eye
 ► 2-3.5 Medium difference, also obvious to an untrained eye
