@@ -4,6 +4,7 @@ import { NavController } from "ionic-angular";
 import { HomeService } from "../../services/home.service";
 import { Platform } from "ionic-angular";
 import { PermissionService } from "../../services/permission.service";
+declare var cordova: any;
 
 @Component({
   selector: "page-home",
@@ -48,15 +49,18 @@ export class HomePage {
       this.ios = true;
       // this.goToQr();
     }
+    
 
     this.permission.getPermission().subscribe(allow => {
       this.permissionAndroid = allow;
+
     });
   }
 
   ionViewDidEnter() {
     if (this.platform.is("ios")) {
       this.ios = true;
+
       // this.goToQr();
     } else {
       if (!this.home.firstLoad) {
