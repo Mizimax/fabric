@@ -24,7 +24,7 @@
       <div class="video">
         <!-- <iframe width="100%" height="240" [src]="house.house_video | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
         <video [src]="house.house_video" controls></video>
-        <video width="100%" playsinline webkit-playsinline>
+        <video width="100%" controls preload="true" playsinline webkit-playsinline>
           <source [src]="house.house_video" type="video/mp4">
         </video>
       </div>
