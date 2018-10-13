@@ -22,7 +22,8 @@
         <div class="badge">{{ house.house_province }}</div>
       </div>
       <div class="video">
-        <iframe width="100%" height="240" [src]="house.house_video | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!-- <iframe width="100%" height="240" [src]="house.house_video | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+        <video [src]="house.house_video"></video>
       </div>
       <div class="house_images">
         <ion-row>
