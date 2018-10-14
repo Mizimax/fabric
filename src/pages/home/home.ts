@@ -56,6 +56,7 @@ export class HomePage {
       this.ios = true;
       this.home.setIos(ios => {
         this.ios = ios;
+        console.log(ios);
       });
       // this.goToQr();
     }
