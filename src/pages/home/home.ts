@@ -47,22 +47,19 @@ export class HomePage {
     //   );
     if (this.platform.is("ios")) {
       this.ios = true;
+      this.home.setIos(ios => {
+        this.ios = ios;
+      });
       // this.goToQr();
     }
-    
 
     this.permission.getPermission().subscribe(allow => {
       this.permissionAndroid = allow;
-
     });
   }
 
   ionViewDidEnter() {
-    if (this.platform.is("ios")) {
-      this.ios = true;
-
-      // this.goToQr();
-    } else {
+    if (this.platform.is("android")) {
       if (!this.home.firstLoad) {
         this.permissionAndroid = true;
         (<any>document).getElementById("frame").contentWindow.location.reload();
@@ -83,8 +80,7 @@ export class HomePage {
         if (!data.cancelled) {
           this.navCtrl.push("HouseDetailPage", { house_id: data.text });
         } else {
-          if (this.platform.is("ios")) this.ios = true;
-          else {
+          if (this.platform.is("android")) {
             this.permissionAndroid = true;
             (<any>document)
               .getElementById("frame")

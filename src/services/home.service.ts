@@ -14,6 +14,21 @@ export class HomeService {
   public firstLoad: boolean = true;
 
   constructor(private http: HTTP) {}
+
+  public async setIos(callback) {
+    try {
+      let { data } = await this.http.get(
+        "https://thaicolorid.com/api/v1/ios",
+        {},
+        {}
+      );
+      let res = JSON.parse(data);
+      console.log("get ios");
+      callback(res["data"]["ios"]);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   public async setHome(callback) {
     try {
       let { data } = await this.http.get(

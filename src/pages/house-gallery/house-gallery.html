@@ -30,7 +30,7 @@
         <ion-row>
           <ng-container *ngFor="let img of house.house_image; let i = index">
             <ion-col *ngIf="i !== 0" class="house_image">
-              <img-loader [spinner]="false" [src]="img" (click)="show = i;modalStatus = !modalStatus"></img-loader>
+              <img-loader [spinner]="false" [src]="img" (click)="show = i;modalStatus = !modalStatus" backgroundSize="100% 100%"></img-loader>
             </ion-col>
           </ng-container>
         </ion-row>
