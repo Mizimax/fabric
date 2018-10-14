@@ -45,6 +45,13 @@ export class HomePage {
     //         this.androidPermissions.PERMISSION.CAMERA
     //       )
     //   );
+
+    this.permission.getPermission().subscribe(allow => {
+      this.permissionAndroid = allow;
+    });
+  }
+
+  ionViewDidLoad() {
     if (this.platform.is("ios")) {
       this.ios = true;
       this.home.setIos(ios => {
@@ -52,10 +59,6 @@ export class HomePage {
       });
       // this.goToQr();
     }
-
-    this.permission.getPermission().subscribe(allow => {
-      this.permissionAndroid = allow;
-    });
   }
 
   ionViewDidEnter() {
