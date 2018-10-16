@@ -13,6 +13,7 @@ declare var cordova: any;
 export class HomePage {
   public ios = false;
   public permissionAndroid = false;
+  public iframeSrc = "";
 
   constructor(
     private qr: QrService,
@@ -52,6 +53,7 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
+    setTimeout(()=>this.iframeSrc="https://thaicolorid.com/vdo2018/aframe-ar.html",5000)
     if (this.platform.is("ios")) {
       this.ios = true;
       this.home.setIos(ios => {

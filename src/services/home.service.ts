@@ -18,7 +18,7 @@ export class HomeService {
   public async setIos(callback) {
     try {
       let { data } = await this.http.get(
-        "https://thaicolorid.com/api/v1/ios",
+        "https://maxang-119e0.firebaseapp.com/ios.json",
         {},
         {}
       );
