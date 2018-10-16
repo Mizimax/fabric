@@ -52,14 +52,16 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    if (this.platform.is("ios")) {
-      this.ios = true;
-      this.home.setIos(ios => {
-        this.ios = ios;
-        console.log(ios);
-      });
-      // this.goToQr();
-    }
+    this.platform.ready().then(() => {
+      if (this.platform.is("ios")) {
+        this.ios = true;
+        this.home.setIos(ios => {
+          this.ios = ios;
+        });
+        // this.goToQr();
+      }
+    })
+
   }
 
   ionViewDidEnter() {
