@@ -1,12 +1,16 @@
 <!-- Generated template for the MenuComponent component -->
-<div>
+<div class="menu">
   <div class="content">
     <ion-row class="rows">
       <ion-col (click)="goBack()" class="qr">
-        <img src="assets/imgs/back.menu.png" width="20">
+        <img src="assets/imgs/back.menu.png" width="20" />
       </ion-col>
-      <ion-col *ngIf="image_1 && !error" (click)="goGallery(image_1)" class="qr">
-        <img src="assets/imgs/qr.menu.png" width="50">
+      <ion-col
+        *ngIf="image_1 && !error"
+        (click)="goGallery(image_1)"
+        class="qr"
+      >
+        <img src="assets/imgs/qr.menu.png" width="50" />
       </ion-col>
     </ion-row>
   </div>
