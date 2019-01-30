@@ -53,18 +53,15 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-
     this.platform.ready().then(() => {
       if (this.platform.is("ios")) {
-
         this.ios = true;
-        this.home.setIos(ios => {
-          setTimeout(()=>this.ios = ios,5000)
-        });
+        // this.home.setIos(ios => {
+        //   setTimeout(()=>this.ios = ios,5000)
+        // });
         // this.goToQr();
       }
-    })
-
+    });
   }
 
   ionViewDidEnter() {

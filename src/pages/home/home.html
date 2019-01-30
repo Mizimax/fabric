@@ -13,11 +13,16 @@
       <a-entity camera></a-entity>
     </a-scene>
   -->
-  <!--
-    <div *ngIf="ios" class="absolute middle header-font sizebig" align="center">
-      ar avaliable in next version ...
-    </div>
-  -->
+  <!-- 
+  <div
+    *ngIf="!permissionAndroid"
+    class="absolute middle header-font sizebig"
+    align="center"
+  >
+    camera not allow<br />
+    please setting to allow camera to use ar
+  </div> -->
+
   <div class="main">
     <div class="main__house" (click)="goToHouseList()">
       <img src="assets/imgs/icon.home.png" width="25" class="absolute middle" />
