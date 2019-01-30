@@ -49,8 +49,9 @@ page-house-gallery {
     transform: translateX(-50%);
     z-index: 9999;
   }
-  .show__image {
+  .show__image img {
     width: 90%;
+    max-width: 400px;
   }
   .hide {
     opacity: 0;
