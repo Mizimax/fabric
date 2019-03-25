@@ -11,9 +11,7 @@ declare var cordova: any;
   templateUrl: "home.html"
 })
 export class HomePage {
-  public ios = true;
   public permissionAndroid = false;
-  public iframeSrc = "https://thaicolorid.com/vdo2018/aframe-ar.html";
 
   constructor(
     private qr: QrService,
@@ -52,17 +50,7 @@ export class HomePage {
     });
   }
 
-  ionViewDidLoad() {
-    this.platform.ready().then(() => {
-      if (this.platform.is("ios")) {
-        this.ios = true;
-        // this.home.setIos(ios => {
-        //   setTimeout(()=>this.ios = ios,5000)
-        // });
-        // this.goToQr();
-      }
-    });
-  }
+  ionViewDidLoad() {}
 
   ionViewDidEnter() {
     if (this.platform.is("android")) {

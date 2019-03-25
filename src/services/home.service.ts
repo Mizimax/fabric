@@ -112,7 +112,7 @@ export class HomeService {
     if (!this.isEmpty(this.house_list)) return callback(this.house_list);
     try {
       let { data } = await this.http.get(
-        "https://thaicolorid.com/api/v1/houses/",
+        "https://thaicolorid.dss.go.th/api/v1/houses/",
         {},
         {}
       );
@@ -129,7 +129,7 @@ export class HomeService {
       return callback(this.house_detail[house_id]);
     try {
       let { data } = await this.http.get(
-        "https://thaicolorid.com/api/v1/house/" + house_id,
+        "https://thaicolorid.dss.go.th/api/v1/house/" + house_id,
         {},
         {}
       );
